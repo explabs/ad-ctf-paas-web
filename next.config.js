@@ -1,4 +1,16 @@
 module.exports = {
+  async exportPathMap(
+    defaultPathMap,
+    {
+      dev, dir, outDir, distDir, buildId,
+    },
+  ) {
+    return {
+      '/': { page: '/' },
+      '/login': { page: '/login' },
+      '/signup': { page: '/signup' },
+    };
+  },
   serverRuntimeConfig: {
     secret: 'SUKA BLYAD AAAAAAAAAAAAAAAAA',
   },
