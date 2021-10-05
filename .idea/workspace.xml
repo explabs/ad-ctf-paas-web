@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9820adaa-72bb-4577-a862-a7688ab41161" name="Default Changelist" comment="add 2 pages">
+      <change beforePath="$PROJECT_DIR$/server/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/server/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/server/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="ProjectId" id="1wiVBS0vLs9DLdP9G3KbWvI0ki6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.17.4" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.17.4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/components/admin" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\components\admin" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\public\img" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\components\UI\Cards" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\components\sections\Top" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\components\sections\LastNews" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Shop59\Desktop\Проекты\liza\site\public\img" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\app" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\components\UI" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\styles\abstracts\mixins\utilities" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="server: Compose Deployment (1)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="server/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="server: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="server.mongo: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="mongo" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="server/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.server: Compose Deployment (1)" />
+        <item itemvalue="Docker.server: Compose Deployment" />
+        <item itemvalue="Docker.server.mongo: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9820adaa-72bb-4577-a862-a7688ab41161" name="Default Changelist" comment="" />
+      <created>1628941262984</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1628941262984</updated>
+      <workItem from="1628941266551" duration="9934000" />
+      <workItem from="1628953958173" duration="39757000" />
+      <workItem from="1629095280524" duration="12794000" />
+      <workItem from="1629263301225" duration="39324000" />
+      <workItem from="1629398219873" duration="30645000" />
+      <workItem from="1629480954303" duration="18721000" />
+      <workItem from="1630238290440" duration="25995000" />
+      <workItem from="1630506293938" duration="22000" />
+      <workItem from="1630799267919" duration="5571000" />
+      <workItem from="1630822551651" duration="503000" />
+      <workItem from="1630823077128" duration="390000" />
+      <workItem from="1630863794445" duration="20624000" />
+      <workItem from="1630996701182" duration="14994000" />
+      <workItem from="1631112500489" duration="429000" />
+      <workItem from="1631112953381" duration="214000" />
+      <workItem from="1631113177981" duration="82811000" />
+      <workItem from="1631635331853" duration="2793000" />
+      <workItem from="1631720757350" duration="28063000" />
+      <workItem from="1631804731053" duration="5383000" />
+      <workItem from="1631811319295" duration="5499000" />
+      <workItem from="1631911388470" duration="4717000" />
+      <workItem from="1631942480990" duration="33606000" />
+      <workItem from="1632031310472" duration="118000" />
+      <workItem from="1632031811849" duration="794000" />
+      <workItem from="1632094800595" duration="16137000" />
+      <workItem from="1632152728334" duration="6523000" />
+      <workItem from="1632380742125" duration="5113000" />
+      <workItem from="1632475911257" duration="27823000" />
+      <workItem from="1632657364132" duration="60000" />
+      <workItem from="1632825944401" duration="20000" />
+      <workItem from="1632845346820" duration="7904000" />
+      <workItem from="1632864393706" duration="1382000" />
+      <workItem from="1633092276110" duration="502000" />
+      <workItem from="1633094002483" duration="12416000" />
+      <workItem from="1633253513800" duration="2018000" />
+      <workItem from="1633353872919" duration="1619000" />
+      <workItem from="1633429250210" duration="1889000" />
+      <workItem from="1633433739601" duration="8211000" />
+    </task>
+    <task id="LOCAL-00001" summary="add 2 pages">
+      <created>1631354591692</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631354591693</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add 2 pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="add 2 pages" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
