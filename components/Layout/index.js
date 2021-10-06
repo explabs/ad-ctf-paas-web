@@ -4,18 +4,18 @@ import {
   NavItem, Col, Container, Nav, NavLink, Row,
 } from 'react-bootstrap';
 
-import { teamService } from 'services';
+import { userService } from 'services';
 import Link from 'next/link';
 
 const Layout = ({ children }) => {
   const [team, setTeam] = useState(null);
 
   useEffect(() => {
-    setTeam(teamService.team);
+    setTeam(userService.team);
   }, []);
 
   function onLogout() {
-    teamService.logout();
+    userService.logout();
   }
 
   return (

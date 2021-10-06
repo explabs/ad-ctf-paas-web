@@ -1,21 +1,17 @@
 import getConfig from 'next/config';
 
-import { teamService } from 'services';
+import { userService } from 'services';
 
 const { publicRuntimeConfig } = getConfig();
 
-export const fetchWrapper = {
-  get, post, put, delete: _delete,
-};
+// helper functions
 
 function authHeader(url) {
-  const team = teamService.teamValue;
-  const isLoggedIn = team && team.token;
+  const user = userService.userValue;
+  const isLoggedIn = user && user.authdata;
   const isApiUrl = url.startsWith(publicRuntimeConfig.apiUrl);
   if (isLoggedIn && isApiUrl) {
-    return {
-      Authorization: `Bearer ${team.token}`,
-    };
+    return { Authorization: `Bearer ${user.authdata}` };
   }
   return {};
 }
@@ -25,8 +21,8 @@ function handleResponse(response) {
     const data = text && JSON.parse(text);
 
     if (!response.ok) {
-      if ([401, 403].includes(response.status) && teamService.teamValue) {
-        teamService.logout();
+      if ([401, 403].includes(response.status) && userService.userValue) {
+        userService.logout();
       }
 
       const error = (data && data.message) || response.statusText;
@@ -38,32 +34,44 @@ function handleResponse(response) {
 }
 
 function get(url) {
-  return fetch(url, {
+  const requestOptions = {
     method: 'GET',
     headers: authHeader(url),
-  }).then(handleResponse);
+  };
+  return fetch(url, requestOptions).then(handleResponse);
 }
 
 function post(url, body) {
-  return fetch(url, {
+  const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...authHeader(url) },
+    credentials: 'include',
     body: JSON.stringify(body),
-  }).then(handleResponse);
+  };
+  return fetch(url, requestOptions).then(handleResponse);
 }
 
 function put(url, body) {
-  return fetch(url, {
+  const requestOptions = {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json', ...authHeader(url) },
     body: JSON.stringify(body),
-  }).then(handleResponse);
+  };
+  return fetch(url, requestOptions).then(handleResponse);
 }
 
-// eslint-disable-next-line no-underscore-dangle
-function _delete(url) {
-  return fetch(url, {
+// prefixed with underscored because delete is a reserved word in javascript
+function remove(url) {
+  const requestOptions = {
     method: 'DELETE',
     headers: authHeader(url),
-  }).then(handleResponse);
+  };
+  return fetch(url, requestOptions).then(handleResponse);
 }
+
+export const fetchWrapper = {
+  get,
+  post,
+  put,
+  remove
+};

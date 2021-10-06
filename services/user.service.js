@@ -1,9 +1,17 @@
+import { BehaviorSubject } from 'rxjs';
 import getConfig from 'next/config';
 import Router from 'next/router';
 
 import { fetchWrapper } from 'helpers';
 
 const Jwt = require('jsonwebtoken');
+
+function getCookie(name) {
+  const matches = document.cookie.match(new RegExp(
+    `(?:^|; )${name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1')}=([^;]*)`,
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
 
 function setCookie(name, value, options = {}) {
   options = {
@@ -34,36 +42,36 @@ function deleteCookie(name) {
   });
 }
 
-function getCookie(name) {
-  const matches = document.cookie.match(new RegExp(
-    `(?:^|; )${name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1')}=([^;]*)`,
-  ));
-  return matches ? decodeURIComponent(matches[1]) : undefined;
-}
-
 const { publicRuntimeConfig } = getConfig();
 const baseUrl = `${publicRuntimeConfig.apiUrl}`;
+const jwtSubject = new BehaviorSubject(process.browser && getCookie('jwt'));
 
-function login(name, password) {
-  return fetchWrapper.post(`${baseUrl}login`, { username: name, password })
+function login(username, password) {
+  return fetchWrapper.post(`${baseUrl}login`, { username, password })
     .then((res) => {
-      setCookie('jwt', res.token, { secure: true });
+      // publish user to subscribers and store in local storage to stay logged in between page refreshes
+      jwtSubject.next(res.token);
+      setCookie('jwt', res.token);
+
+      return res;
     });
 }
 
 function logout() {
   deleteCookie('jwt');
-  Router.push('/');
+  jwtSubject.next(null);
+  Router.push('/login');
 }
 
-function getAll() {
-  return fetchWrapper.get(baseUrl);
+function register(team) {
+  return fetchWrapper.post(`${baseUrl}register`, team);
 }
 
-export const teamService = {
-  get team() { return Jwt.decode(process.browser && getCookie('jwt')); },
-  get jwt() { return process.browser && getCookie('jwt'); },
+export const userService = {
+  jwt: jwtSubject.asObservable(),
+  get jwtValue() { return jwtSubject.value; },
+  get team() { return Jwt.decode(this.jwtValue); },
   login,
   logout,
-  getAll,
+  register,
 };

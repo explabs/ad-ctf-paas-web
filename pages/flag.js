@@ -1,22 +1,11 @@
-import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import Layout from '../components/Layout';
+import { flagsService } from '../services/flags.service';
 
-import { userService } from 'services';
-
-import {
-  Row, Col, Form, Button,
-} from 'react-bootstrap';
-
-import Layout from 'components/Layout';
-
-function SignupPage() {
-  const router = useRouter();
-
+export default function FlagPage() {
   const [loading, setLoading] = useState(false);
-
-  const [name, setName] = useState('');
-  const [ssh, setSSH] = useState('');
-  const [password, setPassword] = useState('');
+  const [flag, setFlag] = useState('');
 
   useEffect(() => {
     setLoading(true);
@@ -24,9 +13,9 @@ function SignupPage() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    userService.register({ name, ssh_pub_key: ssh, password })
-      .then(() => {
-        router.push('login');
+    return flagsService.submit(flag)
+      .then((res) => {
+        console.log(res);
       })
       .catch((error) => {
         console.log(error);
@@ -44,110 +33,34 @@ function SignupPage() {
         <div className="particle particle-4"/>
       </div>
 
-      <Row className="d-flex justify-content-center align-items-center h-100" >
-        <Col md={8}>
-          <div className="card-wrapper">
-            <div style={{
-              background: 'rgba(41, 41, 41, 0.9)', paddingLeft: '2em', paddingRight: '2em', paddingTop: '2em',
-            }}
-            >
-              <h3 style={{ marginBottom: 0, paddingBottom: '0.5rem' }}>Регистрация</h3>
+      <Container className="d-flex justify-content-center align-items-center">
+        <Row className="d-flex justify-content-center align-items-center">
+          <Col className="d-flex justify-content-center align-items-center">
+            <div className="card-wrapper">
+              <Form onSubmit={handleSubmit}>
+                <Form.Group controlId="formFlag" className="mb-4">
+                  <Form.Control
+                    type="text"
+                    placeholder="{my-awesome-flag}"
+                    onChange={(e) => setFlag(e.target.value)}
+                  />
+                </Form.Group>
+                <Button type="submit">Сдать флаг</Button>
+              </Form>
             </div>
-            <Form onSubmit={handleSubmit}>
-              <Row>
-                <Col md={6} style={{ paddingRight: 0 }}>
-                  <Form.Group style={{ background: 'rgba(41, 41, 41, 0.9)', paddingLeft: '2em', paddingRight: '2em' }} controlId="formBasicEmail" className="pb-2">
-                    <Form.Label>Название команды</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="mirea team"
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                  </Form.Group>
-                  <Form.Group style={{ background: 'rgba(41, 41, 41, 0.9)', paddingLeft: '2em', paddingRight: '2em' }} controlId="formBasicPassword" className="pb-2">
-                    <Form.Label>Пароль</Form.Label>
-                    <Form.Control
-                      type="password"
-                      placeholder="●●●●●●"
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                  </Form.Group>
-                </Col>
-                <Col
-                  md={6}
-                  style={{
-                    display: 'flex',
-                    paddingLeft: 0,
-                  }}
-                >
-                  <Form.Group
-                    className="pb-2"
-                    style={{
-                      boxShadow: 'box-shadow: inset 0 0 20px 10px rgba(0, 0, 0, 0.6)',
-                      background: 'rgba(41,41,41,0.5',
-                      padding: '15px 0 0 20px', width: '100%',
-                    }}
-                  >
-                    <div>
-                      <Form.Label>Справка</Form.Label>
-                      <ul className="faq">
-                        <li className="faq-item">
-                          <a className="faq-link" href="https://selectel.ru/blog/tutorials/how-to-generate-ssh/" >
-                            &#62; Как сгенерировать SSH?
-                          </a>
-                        </li>
-                        <li className="faq-item">
-                          <a className="faq-link" href="https://selectel.ru/blog/tutorials/how-to-generate-ssh/" >
-                            &#62; Правила
-                          </a>
-                        </li>
-                        <li className="faq-item">
-                          <a className="faq-link" href="https://selectel.ru/blog/tutorials/how-to-generate-ssh/" >
-                            &#62; Пользовательское соглашение
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </Form.Group>
-                  <div style={{ background: 'rgba(41, 41, 41, 0.9)', height: '100%', width: '2em' }} />
-                </Col>
-              </Row>
-              <Form.Group style={{ background: 'rgba(41, 41, 41, 0.9)', paddingLeft: '2em', paddingRight: '2em' }} controlId="formBasicEmail" className="pb-4">
-                <Form.Label>SSH</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  rows={5}
-                  placeholder="ssh-rsa …"
-                  onChange={(e) => setSSH(e.target.value)}
-                />
-              </Form.Group>
-              <div style={{
-                background: 'rgba(41, 41, 41, 0.9)', paddingBottom: '2em', paddingRight: '2em', paddingLeft: '2em',
-              }}
-              >
-                <Button type="submit">Зарегестрироваться</Button>
-              </div>
-            </Form>
-          </div>
-        </Col>
-      </Row>
-
+          </Col>
+        </Row>
+      </Container>
       <style jsx>
         {`
-
-
-p.reference {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
-}
 
 .page-bg, .animation-wrapper {
   position: fixed;
   top: 72px;
   left: 0;
   width: 100%;
-  overflow: hidden;
   transition: all 0.5s linear;
+  overflow: hidden;
   height: calc(100vh - 50px - 72px);
 }
 
@@ -246,41 +159,24 @@ p.reference {
 
          .card-wrapper {
             width: 100%;
+            padding: 2em;
+            border-radius: 25px;
             position: relative;
-            // background: rgba(#292929, 0.9);
+            background: rgba(#292929, 0.9);
          }
-
-         :global(label) {
-          color: rgba(255,255,255,0.6);
-         }
-
-         .faq {
-          list-style: none;
-          padding-left: 0.5rem;
-         }
-
-          .faq-item {
-                margin-bottom: 0.5rem;
-          }
-
-         .faq-link {
-            color: rgba(#fff, 0.8) !important;
-            text-shadow:1px 1px 0 rgba(0, 0, 0,0.3);
-            text-decoration: none;
-            position: relative;
-            border-bottom: 1px dashed rgba(#fff, 0.6);
-         }
-
+         
          :global(.form-control) {
+         text-align: center;
             background: transparent;
             color: rgba(255,255,255,0.6) !important;
             text-shadow:1px 1px 0 rgba(0, 0, 0,0.3);
-            padding: 10px 15px !important;
-            border: 1px solid rgba(255,255,255,0.4);
-            border-radius: 5px;
+            padding: 10px 20px !important;
+            border: 1px dashed rgba(255,255,255,0.3);
+            border-radius: 0;
             transition: all 0.1s ease-in-out;
             outline:none;
             &::placeholder {
+         text-align: center;
               color: rgba(255,255,255,0.3);
             }
             &:focus {
@@ -288,53 +184,51 @@ p.reference {
               background:rgba(0, 0, 0, 0.1);
               outline:none;
               box-shadow: none;
-
+              
               &::placeholder {
                 color: rgba(255,255,255,0.4);
               }
             }
          }
-
+         
          :global(.btn) {
             display: inline-block;
             position: relative;
-
+            
             width: 100%;
-
+          
             letter-spacing: 0.05rem;
-
+          
             padding: 10px 20px;
-
+          
             text-decoration: none;
             text-transform: uppercase;
-
+          
             overflow: hidden;
-
+          
             border-radius: 5px;
-
+          
             background: transparent;
             color: #39abe7;
             border: 1px solid #39abe7;
-
+          
             transition: all 0.1s linear;
-
+          
             box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
+          
             font-weight: 600;
             font-size: 14px;
             line-height: 165%;
-
+          
             &:hover {
               background: transparent;
               border: 1px solid rgba(255, 255, 255, 0.75);
               color: rgba(255, 255, 255, 0.75);
             }
          }
-
+         
       `}
       </style>
     </Layout>
   );
 }
-
-export default SignupPage;

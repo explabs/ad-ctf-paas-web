@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { teamService } from 'services';
+import { userService } from 'services';
 
 function App({ Component, pageProps }) {
   const router = useRouter();
+  const [jwt, setJwt] = useState(null);
   const [authorized, setAuthorized] = useState(false);
 
   function checkJwt() {
@@ -11,9 +12,10 @@ function App({ Component, pageProps }) {
   }
 
   function authCheck(url) {
+    setJwt(userService.jwtValue);
     const publicPaths = ['/login', '/signup'];
     const path = url.split('?')[0];
-    if (publicPaths.includes(path) || (teamService.jwt && checkJwt(teamService.jwt))) {
+    if (publicPaths.includes(path) || (userService.jwtValue && checkJwt(userService.jwtValue))) {
       setAuthorized(true);
     } else {
       setAuthorized(false);

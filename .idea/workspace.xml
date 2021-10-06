@@ -2,9 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9820adaa-72bb-4577-a862-a7688ab41161" name="Default Changelist" comment="add 2 pages">
-      <change beforePath="$PROJECT_DIR$/server/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/server/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/server/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helpers/api/api-handler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/users/authenticate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/api/users/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/flag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/flags.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/api/error-handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/api/error-handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/api/handler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/api/jwt-middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/api/jwt-middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/fetch-wrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/fetch-wrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/default.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server" beforeDir="false" afterPath="$PROJECT_DIR$/server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/internal/controller/http/v1/all.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/internal/controller/http/v1/all.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/internal/controller/http/v1/submit.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/internal/controller/http/v1/submit.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/team.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +40,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -66,14 +91,22 @@
       <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\components\sections\LastNews" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Shop59\Desktop\Проекты\inf-bez\helpers" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\инф-без" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\инф-без\nginx\conf" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\инф-без\nextjs" />
       <recent name="C:\Users\Shop59\Desktop\Проекты\liza\site\public\img" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\app" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\components\UI" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\styles\abstracts\mixins\utilities" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="server: Compose Deployment (1)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -113,6 +146,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.server: Compose Deployment (1)" />
         <item itemvalue="Docker.server: Compose Deployment" />
         <item itemvalue="Docker.server.mongo: Compose Deployment" />
@@ -164,7 +198,8 @@
       <workItem from="1633253513800" duration="2018000" />
       <workItem from="1633353872919" duration="1619000" />
       <workItem from="1633429250210" duration="1889000" />
-      <workItem from="1633433739601" duration="9237000" />
+      <workItem from="1633433739601" duration="12316000" />
+      <workItem from="1633448792048" duration="11003000" />
     </task>
     <task id="LOCAL-00001" summary="add 2 pages">
       <created>1631354591692</created>

@@ -1,19 +1,4 @@
 module.exports = {
-  async exportPathMap(
-    defaultPathMap,
-    {
-      dev, dir, outDir, distDir, buildId,
-    },
-  ) {
-    return {
-      '/': { page: '/' },
-      '/login': { page: '/login' },
-      '/signup': { page: '/signup' },
-    };
-  },
-  serverRuntimeConfig: {
-    secret: 'SUKA BLYAD AAAAAAAAAAAAAAAAA',
-  },
   publicRuntimeConfig: {
     apiUrl: process.env.NODE_ENV === 'development'
       ? 'http://localhost:8080/api/v1/' // development api

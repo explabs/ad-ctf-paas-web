@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { useRouter } from 'next/router';
 
-import { teamService } from 'services';
+import { userService } from 'services';
 
 import {
   Row, Col, Form, Button,
@@ -24,9 +24,10 @@ function LoginPage() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    return teamService.login(name, password)
+    return userService.login(name, password)
       .then(() => {
-        router.push(router.query.returnUrl || '/');
+        const returnUrl = router.query.returnUrl || '/';
+        router.push(returnUrl);
       })
       .catch((error) => {
         console.log(error);

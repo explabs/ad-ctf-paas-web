@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
-import { teamService } from '../services';
+import { userService } from '../services';
 
 export default function HomePage() {
   const [team, setTeam] = useState(null);
 
   useEffect(() => {
-    setTeam(teamService.team);
+    setTeam(userService.team);
   });
 
   return (

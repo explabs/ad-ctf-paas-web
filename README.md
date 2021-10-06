@@ -19,14 +19,14 @@ NGINX listens on port 80, which is the default HTTP port, so you can just visit 
 ```bash
 # Build images
 docker build --tag nextjs-image .
-docker build --tag nginx-image ./nginx
+docker build --tag .nginx-image ./.nginx
 
 # Create shared network
 docker network create my-network
 
 # Run containers
 docker run --network my-network --name nextjs-container nextjs-image
-docker run --network my-network --link nextjs-container:nextjs --publish 80:80 nginx-image
+docker run --network my-network --link nextjs-container:nextjs --publish 80:80 .nginx-image
 ```
 
 _Next.js container is referenced inside NGINX container as `nextjs`._
