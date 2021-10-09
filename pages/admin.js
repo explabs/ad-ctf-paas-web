@@ -141,16 +141,16 @@ export default function AdminPage() {
                   <th>#</th>
                   <th>Team Name</th>
                   <th># Challenges Solved</th>
-                  <th>Score</th>
+                  <th>Ssh</th>
                 </tr>
               </thead>
               <tbody>
                 {teams.map((team) => (
                   <tr key={team.id} className="text-white-50 border-0">
-                    <th scope="row">{team.id}</th>
-                    <td>{team.name}</td>
-                    <td>{team.total}</td>
-                    <td>{team.score}</td>
+                    <th className="border-0" scope="row">{team.id}</th>
+                    <td className="border-0">{team.name}</td>
+                    <td className="border-0">{team.total}</td>
+                    <td className="border-0"><a href="#">open</a></td>
                   </tr>
                 ))}
               </tbody>
@@ -171,22 +171,16 @@ export default function AdminPage() {
                 </div>
               </InputGroup>
             </form>
-
+            {/*
             <ListGroup>
               <a href="#" className="list-group-item list-group-item-action active">Teams</a>
-              <a
-                href="#"
-                className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-              >
-                Flags
-                <Badge className="badge-primary bg-primary badge-pill ml-auto">14</Badge>
-              </a>
             </ListGroup>
+            */}
           </Col>
           <Col md={9}>
             <Table>
               <thead className="text-light">
-                <tr>
+                <tr className="border-0">
                   <th scope="col">#</th>
                   <th scope="col">Record</th>
                   <th scope="col">Actions</th>
@@ -194,14 +188,14 @@ export default function AdminPage() {
               </thead>
               <tbody>
                 {records.map((record) => (
-                  <tr id={record.id}>
-                    <th className="text-white-50" scope="row">{record.id}</th>
-                    <td>
+                  <tr id={record.id} className="border-0">
+                    <th className="text-white-50 border-0" scope="row">{record.id}</th>
+                    <td className="border-0">
                       <a href="#" className="d-flex align-items-center link-info nav-link p-0">
                         Some record in table
                       </a>
                     </td>
-                    <td>
+                    <td className="border-0">
                       <a href="#" className="btn btn-sm btn-primary bg-transparent text-primary my-1 my-sm-0 p-0 px-2">
                         Edit
                       </a>

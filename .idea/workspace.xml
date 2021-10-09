@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9820adaa-72bb-4577-a862-a7688ab41161" name="Default Changelist" comment="add 2 pages">
-      <change afterPath="$PROJECT_DIR$/pages/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +178,7 @@
       <workItem from="1633429250210" duration="1889000" />
       <workItem from="1633433739601" duration="12316000" />
       <workItem from="1633448792048" duration="11600000" />
-      <workItem from="1633726978232" duration="8336000" />
+      <workItem from="1633726978232" duration="12658000" />
     </task>
     <task id="LOCAL-00001" summary="add 2 pages">
       <created>1631354591692</created>

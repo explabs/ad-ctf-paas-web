@@ -14,8 +14,8 @@ export default function HomePage() {
     <Layout>
       <Container style={{ minHeight: 'calc(100vh - 72px - 50px)' }}>
         <Row>
-          <Col sl={12}>
-            <h1 className="display-1 bold text-center pt-2">
+          <Container sl={12}>
+            <h1 className="display-1 bold text-center pt-2 pb-4">
               <span className="text-danger">
                 INSTRUC
               </span>
@@ -24,58 +24,71 @@ export default function HomePage() {
             </h1>
             <Row className="justify-content-center">
               <Col md={10}>
-                <h5 className="bold pt-2">
-                  Общие правила и инструкции
-                </h5>
-                <ul>
-                  <li>
-                    Когда начнется CTF, на атаку и защиту будет выделено
-                    <b> N </b>
-                    минут.
-                  </li>
-                  <li>
-                    Вы можете узнать ваше место на странице таблицы лидеров.
-                    Время в таблице лидеров обновляется каждый раз, после сдачи флага.
-                  </li>
-                  <li>...</li>
-                  <li>...</li>
-                  <li>...</li>
-                  <li>
-                    Найденные флаги имеют формат
-                    <span className="vim-caret">
-                      {' '}
-                      ctf_
-                      {'{'}
-                      some_text
-                      {'}'}
-                      .
-                    </span>
-                    {' '}
-                  </li>
-                </ul>
-                <h5 className="bold pt-3">
-                  Особые правила и инструкции
-                </h5>
-                <ul>
-                  <li>
-                    Выполнение атак типа «отказ в обслуживании» на сервере приведет к дисквалификации.
-                    Вас просили играть этично.
-                  </li>
-                  <li>Брутфорс-атаки на форму флага запрещены.</li>
-                </ul>
-                <div className="row text-center pt-3">
-                  <div className="d-flex flex-column col-xl-12">
-                    <button type="button" className="btn btn-outline-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 d-flex align-items-center justify-content-center">
-                      <h4 className="m-1">LET THE HACKING BEGIN!</h4>
-                    </button>
-                    <small className="mt-2 form-text text-muted">
-                      Мы ожидаем, что каждый из вас будет соблюдать правила. Невыполнение этого требования может привести к перманентной дисквалификации.
-                    </small>
+                <div className="row align-items-center how-it-works d-flex">
+                  <div className="col-2 text-center bottom d-inline-flex justify-content-center align-items-center">
+                    <div className="circle font-weight-bold">1</div>
+                  </div>
+                  <div className="col-6">
+                    <h5>Rules</h5>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi
+                      orci urna, iaculis in ligula et, posuere interdum lectus.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="row timeline">
+                  <div className="col-2">
+                    <div className="corner top-right"/>
+                  </div>
+                  <div className="col-8">
+                    <hr/>
+                  </div>
+                  <div className="col-2">
+                    <div className="corner left-bottom" />
+                  </div>
+                </div>
+
+                <div className="row align-items-center justify-content-end how-it-works d-flex">
+                  <div className="col-6 text-right">
+                    <h5>VPN - <a className="text-white" href="">download config</a></h5>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi
+                      orci urna, iaculis in ligula et, posuere interdum lectus.
+                    </p>
+                  </div>
+                  <div className="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+                    <div className="circle font-weight-bold">2</div>
+                  </div>
+                </div>
+
+                <div className="row timeline">
+                  <div className="col-2">
+                    <div className="corner right-bottom" />
+                  </div>
+                  <div className="col-8">
+                    <hr/>
+                  </div>
+                  <div className="col-2">
+                    <div className="corner top-left" />
+                  </div>
+                </div>
+
+                <div className="row align-items-center how-it-works d-flex">
+                  <div className="col-2 text-center top d-inline-flex justify-content-center align-items-center">
+                    <div className="circle font-weight-bold">3</div>
+                  </div>
+                  <div className="col-6">
+                    <h5>SSH</h5>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi
+                      orci urna, iaculis in ligula et, posuere interdum lectus.
+                    </p>
                   </div>
                 </div>
               </Col>
             </Row>
-          </Col>
+          </Container>
         </Row>
       </Container>
       <style jsx>
@@ -83,6 +96,71 @@ export default function HomePage() {
           :global(header) {
             border-bottom: 1px solid rgba(220,53,69,0.8) !important;
           }
+          
+          .circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+            padding: 13px 20px;
+            border-radius: 50%;
+            border: 2px dashed rgba(220,53,69, 1);
+            color: #fff;
+            max-height: 50px;
+            z-index: 2;
+          }
+          
+          .how-it-works.row .col-2 {
+            align-self: stretch;
+          }
+          .timeline hr::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(220,53,69, 1);
+            z-index: 1;
+          }
+          
+          .timeline div {
+            padding: 0;
+            height: 40px;
+          }
+          .timeline hr {
+            opacity: 1;
+            height: 2.5px;
+            margin: 0;
+            top: 17px;
+            position: relative;
+          }
+          .timeline .col-2 {
+            display: flex;
+            overflow: hidden;
+          }
+          .timeline .corner {
+            border: 3px solid rgba(220,53,69, 1);
+            width: 100%;
+            position: relative;
+            border-radius: 15px;
+          }
+          .timeline .top-right {
+            left: 50%;
+           top: -52%;
+          }
+          .timeline .left-bottom {
+            left: -50%;
+            top: calc(50% - 3px);
+          }
+          .timeline .top-left {
+            left: -50%;
+             top: -53%;
+          }
+          .timeline .right-bottom {
+            left: 50%;
+            top: calc(50% - 3px);
+          }
+
         `}
       </style>
     </Layout>
