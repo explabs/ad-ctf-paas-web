@@ -54,9 +54,9 @@ function SignupPage() {
               <h3 style={{ marginBottom: 0, paddingBottom: '0.5rem' }}>Регистрация</h3>
             </div>
             <Form onSubmit={handleSubmit}>
-              <Row>
-                <Col md={6} style={{ paddingRight: 0 }}>
-                  <Form.Group style={{ background: 'rgba(41, 41, 41, 0.9)', paddingLeft: '2em', paddingRight: '2em' }} controlId="formBasicEmail" className="pb-2">
+              <Row style={{ marginLeft: 0, marginRight: 0 }}>
+                <Col md={6} style={{ paddingRight: 0, paddingLeft: 0, background: 'rgba(41, 41, 41, 0.9)' }}>
+                  <Form.Group style={{ paddingLeft: '2em', paddingRight: '2em' }} controlId="formBasicEmail" className="pb-2">
                     <Form.Label>Название команды</Form.Label>
                     <Form.Control
                       type="text"
@@ -64,7 +64,7 @@ function SignupPage() {
                       onChange={(e) => setName(e.target.value)}
                     />
                   </Form.Group>
-                  <Form.Group style={{ background: 'rgba(41, 41, 41, 0.9)', paddingLeft: '2em', paddingRight: '2em' }} controlId="formBasicPassword" className="pb-2">
+                  <Form.Group style={{ paddingLeft: '2em', paddingRight: '2em' }} controlId="formBasicPassword" className="pb-2">
                     <Form.Label>Пароль</Form.Label>
                     <Form.Control
                       type="password"
@@ -77,14 +77,14 @@ function SignupPage() {
                   md={6}
                   style={{
                     display: 'flex',
-                    paddingLeft: 0,
+                    padding: 0,
                   }}
                 >
                   <Form.Group
                     className="pb-2"
                     style={{
                       boxShadow: 'box-shadow: inset 0 0 20px 10px rgba(0, 0, 0, 0.6)',
-                      background: 'rgba(41,41,41,0.5',
+                      background: 'rgba(41,41,41,0.5)',
                       padding: '15px 0 0 20px', width: '100%',
                     }}
                   >

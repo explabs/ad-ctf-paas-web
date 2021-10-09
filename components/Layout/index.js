@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <header>
-        <div className="container-xl d-lg-flex flex-items-center p-responsive">
+        <div className="container-xl d-flex flex-items-center p-responsive">
           <div className="d-flex justify-content-between align-items-center">
             <Link href="/">
               <span className="logo me-5">
@@ -29,9 +29,9 @@ const Layout = ({ children }) => {
               </span>
             </Link>
           </div>
-          <div className="header-menu position-lg-relative d-lg-flex justify-content-between align-items-center flex-auto">
+          <div className="header-menu position-relative d-flex justify-content-between align-items-center flex-auto">
             {team ? (
-              <Nav className="mt-0 px-3 px-lg-0 mb-5 mb-lg-0">
+              <Nav className="mt-0 px-0 mb-0">
                 <NavItem className="d-flex align-items-center">
                   <NavLink active href="/">
                     Главная
@@ -48,13 +48,35 @@ const Layout = ({ children }) => {
                   </NavLink>
                 </NavItem>
               </Nav>
-            ) : <Nav className="mt-0 px-3 px-lg-0 mb-5 mb-lg-0" />}
+            ) : <Nav className="mt-0 px-0 mb-0" />}
             {team
               ? (
-                <a href="/" onClick={onLogout} passHref>Выйти</a>
+                <>
+                  {
+                    team.id === 'admin'
+                      ? (
+                        <div className="d-lg-flex align-items-center px-0 text-center text-left">
+                          <a href="/admin" className="header__menu-link signup flex-shrink-0 d-inline-block no-underline rounded px-3 py-1">
+                            Admin
+                          </a>
+                          <div className="position-relative ms-4 mb-0 d-inline-block">
+                            <a href="/" passHref onClick={onLogout} className="header__menu-link login flex-shrink-0 no-underline">
+                              Выйти
+                            </a>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="position-relative me-4 mb-0 d-inline-block">
+                          <a href="/" passHref onClick={onLogout} className="header__menu-link login flex-shrink-0 no-underline">
+                            Выйти
+                          </a>
+                        </div>
+                      )
+                  }
+                </>
               ) : (
-                <div className="d-lg-flex align-items-center px-3 px-lg-0 text-center text-lg-left">
-                  <div className="position-relative me-4 mb-4 mb-lg-0 d-inline-block">
+                <div className="d-lg-flex align-items-center px-0 text-center text-left">
+                  <div className="position-relative me-4 mb-0 d-inline-block">
                     <a href="/login" className="header__menu-link login flex-shrink-0 no-underline">
                       Войти
                     </a>
