@@ -10,3 +10,4 @@ node_modules/
 nginx/
 README.md
 yarn-error.log
+.env

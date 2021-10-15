@@ -1,8 +1,6 @@
 module.exports = {
-  publicRuntimeConfig: {
-    apiUrl: process.env.NODE_ENV === 'development'
-      ? 'http://localhost:8080/api/v1/' // development api
-      : 'http://localhost:8080/api/v1/', // production api
+  env: {
+    apiUrl: process.env.API_URL,
   },
   reactStrictMode: true,
   eslint: {

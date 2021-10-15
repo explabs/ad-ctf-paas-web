@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9820adaa-72bb-4577-a862-a7688ab41161" name="Default Changelist" comment="add 2 pages">
+      <change afterPath="$PROJECT_DIR$/pages/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/scoreboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ad-infrastructure-api/config.yml.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/fetch-wrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/fetch-wrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/flag.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/flag.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/flags.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/flags.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +65,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.4" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/components/admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -51,11 +73,10 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.eslint" value="C:\Users\Shop59\Desktop\Проекты\other\inf-bez\node_modules\eslint" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -178,7 +199,10 @@
       <workItem from="1633429250210" duration="1889000" />
       <workItem from="1633433739601" duration="12316000" />
       <workItem from="1633448792048" duration="11600000" />
-      <workItem from="1633726978232" duration="12658000" />
+      <workItem from="1633726978232" duration="16422000" />
+      <workItem from="1634110767994" duration="301000" />
+      <workItem from="1634222594901" duration="4636000" />
+      <workItem from="1634236733787" duration="3975000" />
     </task>
     <task id="LOCAL-00001" summary="add 2 pages">
       <created>1631354591692</created>

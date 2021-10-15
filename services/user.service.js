@@ -1,5 +1,4 @@
 import { BehaviorSubject } from 'rxjs';
-import getConfig from 'next/config';
 import Router from 'next/router';
 
 import { fetchWrapper } from 'helpers';
@@ -42,12 +41,10 @@ function deleteCookie(name) {
   });
 }
 
-const { publicRuntimeConfig } = getConfig();
-const baseUrl = `${publicRuntimeConfig.apiUrl}`;
 const jwtSubject = new BehaviorSubject(process.browser && getCookie('jwt'));
 
 function login(username, password) {
-  return fetchWrapper.post(`${baseUrl}login`, { username, password })
+  return fetchWrapper.post(`${process.env.API_URL}login`, { username, password })
     .then((res) => {
       // publish user to subscribers and store in local storage to stay logged in between page refreshes
       jwtSubject.next(res.token);
@@ -64,7 +61,7 @@ function logout() {
 }
 
 function register(team) {
-  return fetchWrapper.post(`${baseUrl}register`, team);
+  return fetchWrapper.post(`${process.env.API_URL}register`, team);
 }
 
 export const userService = {

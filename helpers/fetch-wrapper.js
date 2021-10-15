@@ -1,15 +1,11 @@
-import getConfig from 'next/config';
-
 import { userService } from 'services';
-
-const { publicRuntimeConfig } = getConfig();
 
 // helper functions
 
 function authHeader(url) {
   const user = userService.userValue;
   const isLoggedIn = user && user.authdata;
-  const isApiUrl = url.startsWith(publicRuntimeConfig.apiUrl);
+  const isApiUrl = url.startsWith(process.env.API_URL);
   if (isLoggedIn && isApiUrl) {
     return { Authorization: `Bearer ${user.authdata}` };
   }
