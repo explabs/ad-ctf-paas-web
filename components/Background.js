@@ -1,10 +1,8 @@
 import Particles from 'react-particles-js';
-import React from 'react';
-import Layout from '../components/Layout';
 
-export default function BgPage() {
+export default function Background() {
   return (
-    <Layout>
+    <>
       <div className="page-bg"/>
       <Particles
         className="particles"
@@ -117,50 +115,28 @@ export default function BgPage() {
         }}
       />
 
-      <div className="text">
-        <h1>Particles Background</h1>
-        <p>
-          Using
-          <a href="https://github.com/VincentGarreau/particles.js/">ParticlesJS</a>
-          {' '}
-          and well.. that's about it,
-          actually ¯\_(ツ)_/¯
-        </p>
-      </div>
-
       <style jsx>
         {`
-  $text: #fff;
-  $link: #e34234;
-  $link-hover: #ba160c;
-  $background: #1e1e1e;
-
-  canvas {
-    display: block;
-    vertical-align: bottom;
-  }
-
-
-.page-bg, :global(#tsparticles) {
-  position: fixed; 
-  top: 72px;
-  left: 0;
-  width: 100%;
-  transition: all 0.5s linear;
-  overflow: hidden;
-  height: calc(100vh - 50px - 72px);
-}
-
-.page-bg {
-  background: #1e1e1e;
-  background-blend-mode: screen;
-  background-size: cover;
-  filter: grayscale(100%);
-  z-index: -1;
-}
-    
-`}
+          .page-bg, :global(#tsparticles) {
+            position: fixed; 
+            top: 92px;
+            z-index: -1;
+            left: 0;
+            width: 100%;
+            transition: all 0.5s linear;
+            overflow: hidden;
+            height: calc(100vh - 50px);
+          }
+          
+          .page-bg {
+            background: #1e1e1e;
+            background-blend-mode: screen;
+            background-size: cover;
+            filter: grayscale(100%);
+            z-index: -1;
+          }
+      `}
       </style>
-    </Layout>
+    </>
   );
 }

@@ -1,266 +1,83 @@
 import { useEffect, useState } from 'react';
+import { Container, styled } from '@mui/material';
+import Navbar from './Navbar';
+import AuthService from '../../services/auth.service';
 
-import {
-  NavItem, Col, Container, Nav, NavLink, Row,
-} from 'react-bootstrap';
+const APP_BAR_MOBILE = 64;
+const APP_BAR_DESKTOP = 92;
 
-import { userService } from 'services';
-import Link from 'next/link';
-import Particles from 'react-particles-js';
+const RootStyle = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100%',
+  overflow: 'hidden',
+  // backgroundColor: '#1e1e1f',
+});
+
+const MainStyle = styled('div')(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexGrow: 1,
+  overflow: 'auto',
+  minHeight: 'calc(100vh - 50px)',
+  paddingTop: APP_BAR_MOBILE + 24,
+}));
+
+const Footer = styled('footer')(() => ({
+  position: 'relative',
+  backdropFilter: 'blur(6px)',
+  color: '#aaa !important',
+  backgroundColor: 'rgba(18, 18, 18, 0.72)',
+  backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))',
+  borderTop: '1px solid #e2e2e2',
+  fontFamily: 'monospace',
+  width: '100%',
+  height: '50px',
+  padding: '16px 0',
+  textAlign: 'center',
+  small: {
+    fontSize: '1rem',
+  },
+  a: {
+    color: 'rgba(255, 255, 255, 0.82)',
+    textDecoration: 'none',
+    marginLeft: '10px',
+    transition: 'all 0.2s ease-in-out',
+    borderBottom: '1px solid transparent',
+    '&:hover': {
+      color: 'white',
+      borderColor: 'white',
+    },
+  },
+}));
 
 const Layout = ({ children }) => {
-  const [team, setTeam] = useState(null);
+  const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    setTeam(userService.team);
-  }, []);
-
-  function onLogout() {
-    userService.logout();
+  function logOut() {
+    AuthService.logout();
+    setUser(null);
   }
 
   return (
-    <>
-      <header>
-        <div className="container-xl d-flex flex-items-center p-responsive">
-          <div className="d-flex justify-content-between align-items-center">
-            <Link href="/">
-              <span className="logo me-5">
-                CTF
-              </span>
-            </Link>
-          </div>
-          <div className="header-menu position-relative d-flex justify-content-between align-items-center flex-auto">
-            {team ? (
-              <Nav className="mt-0 px-0 mb-0">
-                <NavItem className="d-flex align-items-center">
-                  <NavLink active href="/">
-                    Главная
-                  </NavLink>
-                </NavItem>
-                <NavItem className="d-flex align-items-center">
-                  <NavLink href="flag">
-                    Сдать флаг
-                  </NavLink>
-                </NavItem>
-                <NavItem className="d-flex align-items-center">
-                  <NavLink href="scoreboard">
-                    Команды
-                  </NavLink>
-                </NavItem>
-              </Nav>
-            ) : <Nav className="mt-0 px-0 mb-0" />}
-            {team
-              ? (
-                <>
-                  {
-                    team.id === 'admin'
-                      ? (
-                        <div className="d-lg-flex align-items-center px-0 text-center text-left">
-                          <a href="/admin" className="header__menu-link signup flex-shrink-0 d-inline-block no-underline rounded px-3 py-1">
-                            Admin
-                          </a>
-                          <div className="position-relative ms-4 mb-0 d-inline-block">
-                            <a href="/" passHref onClick={onLogout} className="header__menu-link login flex-shrink-0 no-underline">
-                              Выйти
-                            </a>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="position-relative me-4 mb-0 d-inline-block">
-                          <a href="/" passHref onClick={onLogout} className="header__menu-link login flex-shrink-0 no-underline">
-                            Выйти
-                          </a>
-                        </div>
-                      )
-                  }
-                </>
-              ) : (
-                <div className="d-lg-flex align-items-center px-0 text-center text-left">
-                  <div className="position-relative me-4 mb-0 d-inline-block">
-                    <a href="/login" className="header__menu-link login flex-shrink-0 no-underline">
-                      Войти
-                    </a>
-                  </div>
-                  <a href="/signup" className="header__menu-link signup flex-shrink-0 d-inline-block no-underline rounded px-3 py-1">
-                    Зарегистироваться
-                  </a>
-                </div>
-              )}
-          </div>
-        </div>
-      </header>
+    <RootStyle>
+      <Navbar user={user} logOut={logOut} />
 
-      <div className="wrapper d-flex justify-content-center align-items-center">
-        <Container className="h-100">
-          {children}
-        </Container>
-      </div>
+      <MainStyle>
+        {children}
+      </MainStyle>
 
-      <footer className="mt-auto">
+      <Footer>
         <Container>
-          <Row>
-            <small className="d-flex justify-content-center align-items-center m-0">
-              Made with love by
-              {' '}
-              <a href="https://vk.com/lu.perfect">@lu.perfect</a>
-            </small>
-          </Row>
+          <small className="d-flex justify-content-center align-items-center m-0">
+            Made with love by
+            {' '}
+            <a href="https://vk.com/lu.perfect">@lu.perfect</a>
+          </small>
         </Container>
-      </footer>
-
-      <style jsx>
-        {`
-
-        .logo {
-          display: flex;
-          font-family: Tomorrow, sans-serif;
-          align-items: center;
-          height: 100%;
-          font-weight: 800;
-          font-size: 20px;
-          color: #f9f9f9;
-          cursor: pointer;     
-        }
-        
-        .header-menu {
-          width: 100%;
-          overflow: visible;
-          background-color: transparent;
-          box-shadow: none;
-        }
-        
-        header {
-          display: flex;
-          align-items: center;
-          height: 72px; width: 100%;
-          background-color: #1f1f1f; color: rgba(255, 255, 255, 0.87);
-          font-weight: 500;
-          font-size: 1rem;
-          font-family: Montserrat, serif;
-          border-bottom: 1px solid rgba(#39abe7, 0.8);
-        
-          :global(.nav-link) {
-            padding: 0;
-            color: rgba(255, 255, 255, .5);
-            background-color: transparent;
-            border-bottom: 1px solid transparent;
-          }
-          
-          :global(.nav-link:hover),
-          :global(.nav-link:focus) {
-            border-bottom-color: rgba(255, 255, 255, .25);
-          }
-        
-          :global(.nav-item) + :global(.nav-item)  {
-            margin-left: 1.5rem;
-          }
-          
-          .header__menu-link {    
-            color: #fff;
-            text-decoration: none !important;
-            white-space: nowrap;
-            background: transparent;
-            transition: all 0.15s ease-in-out;
-            &.login:hover {
-              color: rgba(255,255,255,0.6);
-            }
-            &.signup {
-              border: 1px dashed rgba(255,255,255,0.6);
-              &:hover {
-                color: #39abe7;
-                border-color:  #39abe7;
-              }
-            }
-          }
-          
-          .sign-in-btn {
-          
-          }
-          .sign-up-btn {
-          
-          }
-        }
-        
-        .wrapper {
-          width: 100%; height: 100%; min-height: calc(100vh - 72px - 50px);
-          background-color: #121212; color: rgba(255, 255, 255, 0.87);
-        }
-        
-        footer {
-          display: flex;
-          align-items: center;
-          height: 50px; width: 100%;
-          background-color: #1f1f1f; color: rgba(255, 255, 255, 0.6);
-          font-family: monospace;
-          
-          a {
-            color: rgba(255, 255, 255, 0.82);
-            text-decoration: none;
-            margin-left: 10px;
-            transition: all 0.2s ease-in-out;
-            border-bottom: 1px solid transparent;
-            &:hover {
-              color: white;
-              border-color: white;
-            }
-          }
-        } 
-      `}
-      </style>
-
-      <style jsx>
-        {`
-  $text: #fff;
-  $link: #e34234;
-  $link-hover: #ba160c;
-  $background: #1e1e1e;
-
-  canvas {
-    display: block;
-    vertical-align: bottom;
-  }
-
-  #particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: $background
-  }
-
-  .text {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%,-50%);
-    color: $text;
-    max-width: 90%;
-    padding: 2em 3em;
-    background: rgba(0, 0, 0, 0.4);
-    text-shadow: 0px 0px 2px #131415;
-    font-family: 'Open Sans', sans-serif;
-  }
-
-  h1 {
-    font-size: 2.25em;
-    font-weight: 700;
-    letter-spacing: -1px;
-  }
-
-  a,
-  a:visited {
-    color: $link;
-    transition: 0.25s;
-  }
-
-  a:hover,
-  a:focus {
-    color: $link-hover;
-  }
-    
-`}
-      </style>
-    </>
+      </Footer>
+    </RootStyle>
   );
 };
 

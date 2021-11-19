@@ -5,26 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9820adaa-72bb-4577-a862-a7688ab41161" name="Default Changelist" comment="add 2 pages">
-      <change afterPath="$PROJECT_DIR$/pages/bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/scoreboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Layout/Navbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/MenuPopover.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Scrollbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/temp/competition.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/temp/generate-prometheus.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/temp/login.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/temp/registration.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/temp/team-list.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/temp/update-vpn.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/admin2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/generate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/auth-header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/auth.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ad-infrastructure-api/config.yml.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ad-infrastructure-api" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/api/api-handler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/api/error-handler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/api/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/api/jwt-middleware.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/api/omit.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/helpers/fetch-wrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/fetch-wrapper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/flag.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/flag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/bg.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/scoreboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/scoreboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/flags.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/flags.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Background.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,14 +83,14 @@
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.4" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/components/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/helpers" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="C:\Users\Shop59\Desktop\Проекты\other\inf-bez\node_modules\eslint" />
+    <property name="node.js.selected.package.eslint" value="C:\Users\Shop59\Desktop\Проекты\ctf\ad-ctf-paas-api\web\node_modules\eslint" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -83,11 +100,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\components\admin" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\public\img" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\components\UI\Cards" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\components\sections\Top" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\Полный привод\site\components\sections\LastNews" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\ctf\ad-ctf-paas-api\web\helpers" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\ctf\ad-ctf-paas-api\web\components\temp" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\ctf\ad-ctf-paas-api\web" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\ctf\ad-ctf-paas-api\web\services" />
+      <recent name="C:\Users\Shop59\Desktop\Проекты\other\inf-bez\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Shop59\Desktop\Проекты\inf-bez\helpers" />
@@ -203,6 +220,13 @@
       <workItem from="1634110767994" duration="301000" />
       <workItem from="1634222594901" duration="4636000" />
       <workItem from="1634236733787" duration="3975000" />
+      <workItem from="1634324999004" duration="540000" />
+      <workItem from="1634325633298" duration="378000" />
+      <workItem from="1636544888211" duration="106000" />
+      <workItem from="1636545026401" duration="106000" />
+      <workItem from="1636814908182" duration="20781000" />
+      <workItem from="1637318320499" duration="2559000" />
+      <workItem from="1637340508647" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="add 2 pages">
       <created>1631354591692</created>
