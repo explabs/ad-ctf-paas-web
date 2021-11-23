@@ -5,44 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9820adaa-72bb-4577-a862-a7688ab41161" name="Default Changelist" comment="add 2 pages">
-      <change afterPath="$PROJECT_DIR$/components/Layout/Navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/MenuPopover.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Scrollbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/temp/competition.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/temp/generate-prometheus.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/temp/login.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/temp/registration.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/temp/team-list.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/temp/update-vpn.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/admin2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/generate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/auth-header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/auth.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ad-infrastructure-api" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/api/api-handler.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/api/error-handler.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/api/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/api/jwt-middleware.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/api/omit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/fetch-wrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/fetch-wrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/bg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/fetch-wrapper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/users/authenticate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/users/register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/flag.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/flag.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/scoreboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/scoreboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/components/Background.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,6 +198,7 @@
       <workItem from="1636814908182" duration="20781000" />
       <workItem from="1637318320499" duration="2559000" />
       <workItem from="1637340508647" duration="5000" />
+      <workItem from="1637670007794" duration="729000" />
     </task>
     <task id="LOCAL-00001" summary="add 2 pages">
       <created>1631354591692</created>
