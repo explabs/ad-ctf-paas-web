@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import { useRouter } from 'next/router';
 
-import { userService } from 'services';
-
 import Layout from 'components/Layout';
 import {
   Grid,

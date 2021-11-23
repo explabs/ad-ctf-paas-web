@@ -1,8 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 
-import { userService } from 'services';
-
 import Layout from 'components/Layout';
 import Background from 'components/Background';
 import { Button, Container, FormGroup, Grid, Input, InputLabel, TextareaAutosize } from '@mui/material';
@@ -22,13 +20,6 @@ function SignupPage() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    userService.register({ name, ssh_pub_key: ssh, password })
-      .then(() => {
-        router.push('login');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   }
 
   return (

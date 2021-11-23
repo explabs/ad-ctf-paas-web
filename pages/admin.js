@@ -1,7 +1,5 @@
-import {
-  Col, Container, FormControl, InputGroup, Row, Table,
-} from 'react-bootstrap';
 import Layout from '../components/Layout';
+import { Container, Grid, Input } from '@mui/material';
 
 export default function AdminPage() {
   const teams = [
@@ -46,8 +44,8 @@ export default function AdminPage() {
   return (
     <Layout>
       <Container>
-        <Row>
-          <Col xl={12}>
+        <Grid container>
+          <Grid item xl={12}>
             <h1 className="display-1 bold text-center">
               <span className="text-danger">
                 ADMIN
@@ -55,11 +53,11 @@ export default function AdminPage() {
               BOARD
               <span className="vim-caret">&nbsp;</span>
             </h1>
-          </Col>
-        </Row>
-        <Row className="mt-5 justify-content-center">
-          <Col>
-            <Table className="table-hover table-striped">
+          </Grid>
+        </Grid>
+        <Grid container className="mt-5 justify-content-center">
+          <Grid item >
+            <table className="table-hover table-striped">
               <thead className="text-danger">
                 <tr>
                   <th>#</th>
@@ -78,31 +76,29 @@ export default function AdminPage() {
                   </tr>
                 ))}
               </tbody>
-            </Table>
-          </Col>
-        </Row>
+            </table>
+          </Grid>
+        </Grid>
       </Container>
 
       <Container className="py-5 mb5">
         <h1 className="mb-5">Управление БД</h1>
-        <Row>
-          <Col md={3}>
+        <Grid container>
+          <Grid item md={3}>
             <form className="mb-3">
-              <InputGroup>
-                <FormControl type="text" placeholder="Search" />
-                <div className="input-group-append">
-                  <button type="submit" className="btn btn-primary">Search</button>
-                </div>
-              </InputGroup>
+              <Input type="text" placeholder="Search" />
+              <div className="input-group-append">
+                <button type="submit" className="btn btn-primary">Search</button>
+              </div>
             </form>
             {/*
             <ListGroup>
               <a href="#" className="list-group-item list-group-item-action active">Teams</a>
             </ListGroup>
             */}
-          </Col>
-          <Col md={9}>
-            <Table>
+          </Grid>
+          <Grid item md={9}>
+            <table>
               <thead className="text-light">
                 <tr className="border-0">
                   <th scope="col">#</th>
@@ -130,10 +126,10 @@ export default function AdminPage() {
                   </tr>
                 ))}
               </tbody>
-            </Table>
+            </table>
 
-          </Col>
-        </Row>
+          </Grid>
+        </Grid>
       </Container>
       <style jsx>
         {`
