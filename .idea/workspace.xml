@@ -5,15 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9820adaa-72bb-4577-a862-a7688ab41161" name="Default Changelist" comment="add 2 pages">
+      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Layout/MenuItemButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Layout/menu.data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SplashScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postman.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/@lodash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/Auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/store/loginSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/store/registerSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/auth/store/userSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/jwtService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/core/dialogSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/core/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/core/messageSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/rootReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/withReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/fetch-wrapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/users/authenticate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/users/register.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/flag.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/flag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Background.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Layout/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MenuPopover.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Scrollbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/temp/competition.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/temp/competition.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/temp/login.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/temp/login.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/temp/registration.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/temp/registration.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/temp/team-list.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/temp/team-list.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/temp/update-vpn.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/temp/update-vpn.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth-header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth.service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/flags.service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user.service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,38 +87,39 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.4" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/helpers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="C:\Users\Shop59\Desktop\Проекты\ctf\ad-ctf-paas-api\web\node_modules\eslint" />
+    <property name="node.js.selected.package.eslint" value="C:\Users\Shop59\Desktop\ad-ctf-paas-web\node_modules\eslint" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Shop59\Desktop\ad-ctf-paas-web\src" />
+      <recent name="C:\Users\Shop59\Desktop\ad-ctf-paas-web" />
+      <recent name="C:\Users\Shop59\Desktop\ad-ctf-paas-web\services" />
+      <recent name="C:\Users\Shop59\Desktop\ad-ctf-paas-web\components\Layout" />
       <recent name="C:\Users\Shop59\Desktop\Проекты\ctf\ad-ctf-paas-api\web\helpers" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\ctf\ad-ctf-paas-api\web\components\temp" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\ctf\ad-ctf-paas-api\web" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\ctf\ad-ctf-paas-api\web\services" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\other\inf-bez\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Shop59\Desktop\ad-ctf-paas-web\src" />
+      <recent name="C:\Users\Shop59\Desktop\ad-ctf-paas-web\features" />
       <recent name="C:\Users\Shop59\Desktop\Проекты\inf-bez\helpers" />
       <recent name="C:\Users\Shop59\Desktop\Проекты\инф-без" />
       <recent name="C:\Users\Shop59\Desktop\Проекты\инф-без\nginx\conf" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\инф-без\nextjs" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\liza\site\public\img" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -133,10 +170,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.server: Compose Deployment (1)" />
-        <item itemvalue="Docker.server: Compose Deployment" />
         <item itemvalue="Docker.server.mongo: Compose Deployment" />
+        <item itemvalue="Docker.server: Compose Deployment" />
+        <item itemvalue="Docker.server: Compose Deployment (1)" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -199,6 +236,7 @@
       <workItem from="1637318320499" duration="2559000" />
       <workItem from="1637340508647" duration="5000" />
       <workItem from="1637670007794" duration="729000" />
+      <workItem from="1642763112225" duration="23194000" />
     </task>
     <task id="LOCAL-00001" summary="add 2 pages">
       <created>1631354591692</created>

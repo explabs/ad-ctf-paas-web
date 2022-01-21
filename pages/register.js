@@ -1,25 +1,57 @@
-import { useRouter } from 'next/router';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import Layout from 'components/Layout';
 import Background from 'components/Background';
-import { Button, Container, FormGroup, Grid, Input, InputLabel, TextareaAutosize } from '@mui/material';
+import {
+  Button, Container, FormGroup, Grid, Input, InputLabel, TextareaAutosize,
+} from '@mui/material';
+import { Controller, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { useDispatch, useSelector } from 'react-redux';
+import { submitRegister } from '../src/features/auth/store/registerSlice';
+import _ from '../src/@lodash';
 
 function SignupPage() {
-  const router = useRouter();
-
-  const [loading, setLoading] = useState(false);
-
-  const [name, setName] = useState('');
-  const [ssh, setSSH] = useState('');
-  const [password, setPassword] = useState('');
-
-  useEffect(() => {
-    setLoading(true);
+  const dispatch = useDispatch();
+  const register = useSelector(({ auth }) => auth.register);
+  const {
+    control, setError, formState, handleSubmit,
+  } = useForm({
+    mode: 'onChange',
+    defaultValues: {
+      name: '',
+      password: '',
+      ssh_pub_key: '',
+    },
+    resolver: yupResolver(
+      yup.object().shape({
+        name: yup
+          .string()
+          .required('Это поле обязательно для заполнения.'),
+        password: yup
+          .string()
+          .required('Это поле обязательно для заполнения.'),
+        ssh_pub_key: yup
+          .string()
+          .required('Это поле обязательно для заполнения.'),
+      }),
+    ),
   });
 
-  async function handleSubmit(event) {
-    event.preventDefault();
+  const { isValid, dirtyFields, errors } = formState;
+
+  useEffect(() => {
+    register.errors.forEach((error) => {
+      setError(error.type, {
+        type: 'manual',
+        message: error.message,
+      });
+    });
+  }, [register.errors, setError]);
+
+  async function onSubmit(model) {
+    await dispatch(submitRegister(model));
   }
 
   return (
@@ -36,23 +68,45 @@ function SignupPage() {
               >
                 <h3 style={{ marginBottom: 0, paddingBottom: '0.5rem' }}>Регистрация</h3>
               </div>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <Grid container sx={{ ml: 0, mr: 0 }}>
                   <Grid item md={6} style={{ paddingRight: 0, paddingLeft: 0, background: 'rgba(41, 41, 41, 0.9)' }}>
                     <FormGroup style={{ paddingLeft: '2em', paddingRight: '2em', paddingBottom: '1em' }}>
                       <InputLabel>Название команды</InputLabel>
-                      <Input
-                        type="text"
-                        placeholder="mirea team"
-                        onChange={(e) => setName(e.target.value)}
+                      <Controller
+                        name="name"
+                        control={control}
+                        render={({ field }) => (
+                          <Input
+                            {...field}
+                            type="text"
+                            placeholder="mirea team"
+                            error={!!errors.name}
+                            helperText={errors?.name?.message}
+                            variant="outlined"
+                            required
+                            fullWidth
+                          />
+                        )}
                       />
                     </FormGroup>
                     <FormGroup style={{ paddingLeft: '2em', paddingRight: '2em' }} >
                       <InputLabel>Пароль</InputLabel>
-                      <Input
-                        type="password"
-                        placeholder="●●●●●●"
-                        onChange={(e) => setPassword(e.target.value)}
+                      <Controller
+                        name="password"
+                        control={control}
+                        render={({ field }) => (
+                          <Input
+                            {...field}
+                            type="password"
+                            placeholder="●●●●●●"
+                            error={!!errors.password}
+                            helperText={errors?.password?.message}
+                            variant="outlined"
+                            required
+                            fullWidth
+                          />
+                        )}
                       />
                     </FormGroup>
                   </Grid>
@@ -96,19 +150,36 @@ function SignupPage() {
                     <div style={{ background: 'rgba(41, 41, 41, 0.9)', height: '100%', width: '2em' }} />
                   </Grid>
                 </Grid>
-                <FormGroup style={{ background: 'rgba(41, 41, 41, 0.9)', paddingLeft: '2em', paddingRight: '2em', paddingBottom: '1em' }}>
+                <FormGroup style={{
+                  background: 'rgba(41, 41, 41, 0.9)', paddingLeft: '2em', paddingRight: '2em', paddingBottom: '1em',
+                }}
+                >
                   <InputLabel sx={{ paddingBottom: '1em' }}>SSH</InputLabel>
-                  <TextareaAutosize
-                    minRows={5}
-                    placeholder="ssh-rsa …"
-                    onChange={(e) => setSSH(e.target.value)}
+                  <Controller
+                    name="ssh_pub_key"
+                    control={control}
+                    render={({ field }) => (
+                      <TextareaAutosize
+                        {...field}
+                        minRows={5}
+                        placeholder="ssh-rsa …"
+                        error={!!errors.ssh_pub_key}
+                        helperText={errors?.ssh_pub_key?.message}
+                      />
+                    )}
                   />
                 </FormGroup>
                 <div style={{
                   background: 'rgba(41, 41, 41, 0.9)', paddingBottom: '1em', paddingRight: '2em', paddingLeft: '1.5em',
                 }}
                 >
-                  <Button type="submit">Зарегестрироваться</Button>
+                  <Button
+                    type="submit"
+                    disabled={_.isEmpty(dirtyFields) || !isValid}
+                    aria-label="SIGN UP"
+                  >
+                    Зарегистрироваться
+                  </Button>
                 </div>
               </form>
             </div>

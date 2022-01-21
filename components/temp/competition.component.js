@@ -1,6 +1,6 @@
 import React from 'react';
 
-import UserService from 'services/user.service';
+import UserService from 'src/services/user.service';
 
 export class CompetitionComponent extends React.Component {
   constructor(props) {

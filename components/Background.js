@@ -119,7 +119,7 @@ export default function Background() {
         {`
           .page-bg, :global(#tsparticles) {
             position: fixed; 
-            top: 92px;
+            top: 72px;
             z-index: -1;
             left: 0;
             width: 100%;

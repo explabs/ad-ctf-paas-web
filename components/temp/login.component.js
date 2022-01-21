@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import { Button, Input } from '@mui/material';
-import AuthService from '../../services/auth.service';
+import AuthService from '../../src/services/auth.service';
 
 const required = (value) => {
   if (!value) {

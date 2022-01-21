@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 
 import { Button, Container } from '@mui/material';
 
@@ -7,7 +7,6 @@ import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 
 import DescriptionIcon from '@mui/icons-material/Description';
@@ -17,7 +16,6 @@ import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import Typography from '@mui/material/Typography';
 
 import { styled } from '@mui/material/styles';
-import { userService } from '../services';
 import Layout from '../components/Layout';
 import Background from '../components/Background';
 
@@ -39,10 +37,6 @@ const CodeBlock = styled(Typography)(() => ({
 }));
 
 export default function HomePage() {
-  const content = `# Explanation of the problem
-## So what I'm trying to explain is
-The detail, right. You've gotta write repeated pattern of codes.`;
-
   return (
     <Layout>
       <Background />
@@ -57,18 +51,8 @@ The detail, right. You've gotta write repeated pattern of codes.`;
           </Typography>
         </Typography>
 
-        <Timeline sx={{ width: '70%', margin: '50px auto' }}>
+        <Timeline sx={{ width: '70%', margin: '48px auto' }}>
           <TimelineItem sx={{ '&::before': { display: 'none' } }}>
-            {/*
-              <TimelineOppositeContent
-              sx={{ mt: '1rem' }}
-              align="right"
-              variant="body2"
-              color="text.secondary"
-            >
-              1 шаг
-            </TimelineOppositeContent>
-             */}
             <TimelineSeparator>
               <TimelineDot color="red" variant="outlined" sx={{ boxShadow: '0px 0px 15px 0px rgb(201 26 48)' }}>
                 <DescriptionIcon color="red" />
@@ -78,7 +62,7 @@ The detail, right. You've gotta write repeated pattern of codes.`;
             <TimelineContent sx={{ py: '12px', px: 2 }}>
               <Typography variant="h4" component="span" color="#f44336">
                 Правила -
-                <DownloadButton color="red">
+                <DownloadButton color="red" disableRipple>
                   <Typography variant="h5" sx={{ textTransform: 'none', borderBottom: '1px dashed #f44336' }} component="span" color="#f44336">
                     скачать
                   </Typography>
@@ -94,16 +78,6 @@ The detail, right. You've gotta write repeated pattern of codes.`;
             </TimelineContent>
           </TimelineItem>
           <TimelineItem sx={{ '&::before': { display: 'none' } }}>
-            {/*
-              <TimelineOppositeContent
-              sx={{ mt: '1rem' }}
-              variant="body2"
-              align="right"
-              color="text.secondary"
-            >
-              шаг 2
-            </TimelineOppositeContent>
-            */}
             <TimelineSeparator>
               <TimelineDot color="primary" sx={{ boxShadow: '0px 0px 15px 0px #39abe7' }}>
                 <VpnLockIcon />
@@ -113,7 +87,7 @@ The detail, right. You've gotta write repeated pattern of codes.`;
             <TimelineContent sx={{ py: '12px', px: 2 }}>
               <Typography variant="h4" component="span" color="primary">
                 VPN -
-                <DownloadButton>
+                <DownloadButton disableRipple>
                   <Typography variant="h5" sx={{ textTransform: 'none', borderBottom: '1px dashed #556cd6' }} component="span">
                     скачать
                   </Typography>
@@ -125,16 +99,6 @@ The detail, right. You've gotta write repeated pattern of codes.`;
             </TimelineContent>
           </TimelineItem>
           <TimelineItem sx={{ '&::before': { display: 'none' } }}>
-            {/*
-               <TimelineOppositeContent
-              sx={{ mt: '1rem' }}
-              align="right"
-              variant="body2"
-              color="text.secondary"
-            >
-              3 шаг
-            </TimelineOppositeContent>
-            */}
             <TimelineSeparator>
               <TimelineDot color="red" variant="outlined" sx={{ boxShadow: '0px 0px 15px 0px rgb(201 26 48)' }}>
                 <VpnKeyIcon color="red"/>
@@ -143,7 +107,7 @@ The detail, right. You've gotta write repeated pattern of codes.`;
             <TimelineContent sx={{ py: '12px', px: 2 }}>
               <Typography variant="h4" component="span" color="#f44336">
                 SSH -
-                <DownloadButton color="red">
+                <DownloadButton color="red" disableRipple>
                   <Typography variant="h5" sx={{ textTransform: 'none', borderBottom: '1px dashed #f44336' }} component="span" color="#f44336">
                     скачать
                   </Typography>

@@ -1,6 +1,6 @@
 module.exports = {
   publicRuntimeConfig: {
-    apiUrl: process.env.API_URL,
+    apiUrl: process.env.SERVER_IP,
   },
   reactStrictMode: true,
   eslint: {

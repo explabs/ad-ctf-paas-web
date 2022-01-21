@@ -1,5 +1,5 @@
 import React from 'react';
-import UserService from 'services/user.service';
+import UserService from 'src/services/user.service';
 import { Card, CardContent, Typography } from '@mui/material';
 
 export class Registration extends React.Component {
@@ -130,13 +130,13 @@ export class Registration extends React.Component {
               <Typography component="p">
                 {Object.entries(items).map(([key, value]) => (
                   <li key={key}>
-                              <b>
-                                  {key}
-                                  :
-</b>
-                              {' '}
-                              {value}
-                            </li>
+                    <b>
+                      {key}
+                      :
+                    </b>
+                    {' '}
+                    {value}
+                  </li>
                 ))}
               </Typography>
             </CardContent>
