@@ -8,6 +8,8 @@ import { Provider } from 'react-redux';
 import store from '../src/store';
 import Auth from '../src/features/auth/Auth';
 
+import '../styles/styles.css';
+
 const { publicRuntimeConfig } = getConfig();
 
 axios.defaults.baseURL = publicRuntimeConfig.apiUrl;

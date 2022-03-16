@@ -5,50 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9820adaa-72bb-4577-a862-a7688ab41161" name="Default Changelist" comment="add 2 pages">
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Layout/MenuItemButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Layout/menu.data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/SplashScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postman.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/@lodash.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/store/loginSlice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/store/registerSlice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/store/userSlice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/jwtService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/core/dialogSlice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/core/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/core/messageSlice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/rootReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/withReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/scoreboard/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Background.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Background.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MenuPopover.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Scrollbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/temp/competition.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/temp/competition.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/temp/login.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/temp/login.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/temp/registration.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/temp/registration.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/temp/team-list.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/temp/team-list.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/temp/update-vpn.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/temp/update-vpn.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth-header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/auth.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/flags.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/user.service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/scoreboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/scoreboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,11 +77,11 @@
       <recent name="C:\Users\Shop59\Desktop\Проекты\ctf\ad-ctf-paas-api\web\helpers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Shop59\Desktop\ad-ctf-paas-web\styles" />
       <recent name="C:\Users\Shop59\Desktop\ad-ctf-paas-web\src" />
       <recent name="C:\Users\Shop59\Desktop\ad-ctf-paas-web\features" />
       <recent name="C:\Users\Shop59\Desktop\Проекты\inf-bez\helpers" />
       <recent name="C:\Users\Shop59\Desktop\Проекты\инф-без" />
-      <recent name="C:\Users\Shop59\Desktop\Проекты\инф-без\nginx\conf" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -237,6 +199,11 @@
       <workItem from="1637340508647" duration="5000" />
       <workItem from="1637670007794" duration="729000" />
       <workItem from="1642763112225" duration="23194000" />
+      <workItem from="1645799830415" duration="398000" />
+      <workItem from="1645964849349" duration="2613000" />
+      <workItem from="1646032517818" duration="620000" />
+      <workItem from="1646304914693" duration="5813000" />
+      <workItem from="1646928005980" duration="7235000" />
     </task>
     <task id="LOCAL-00001" summary="add 2 pages">
       <created>1631354591692</created>

@@ -21,6 +21,7 @@
     "body-parser": "latest",
     "cookies-next": "^2.0.3",
     "date-fns": "^2.25.0",
+    "emit-file-loader": "^0.0.2",
     "highlight.js": "^11.3.1",
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.21",
