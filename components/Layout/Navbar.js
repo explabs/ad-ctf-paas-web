@@ -3,10 +3,29 @@ import {
   AppBar, Avatar, Box, Button, Container, Icon, ListItemIcon, ListItemText, MenuItem, Popover, Toolbar, Typography,
 } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
+import styled from '@emotion/styled';
+import Link from 'next/link';
 import MenuItemButton from './MenuItemButton';
 
 import data from './menu.data';
 import { logoutUser } from '../../src/features/auth/store/userSlice';
+
+const Logo = styled(Typography)`
+  color: rgb(57 171 231 / 75%) !important;
+  letter-spacing: .045em;
+  font-family: monospace;
+  border-right: 1.5px solid rgb(57 171 231 / 75%);
+  line-height: 21px;
+  
+  text-decoration: none !important;
+  
+  animation: blink-caret 1.5s step-end infinite;
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(57 171 231 / 75%); }
+  }
+`;
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -41,14 +60,21 @@ export default function Navbar() {
       >
         <Container maxWidth="xl">
           <Toolbar>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ display: { xs: 'none', sm: 'block' } }}
-            >
-              CTF
-            </Typography>
+            <Link href="/">
+              <Logo
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{
+                  '&:hover': {
+                    color: 'rgb(57 171 231 / 100%)',
+                  },
+                  display: { xs: 'none', sm: 'block' },
+                }}
+              >
+                ctf_
+              </Logo>
+            </Link>
 
             <Box sx={{ flexGrow: 1 }} />
             <Button
@@ -78,10 +104,11 @@ export default function Navbar() {
                     display: 'flex',
                     fontSize: '14px',
                     fontWeight: 600,
+                    color: 'rgb(57 171 231 / 75%)',
                   }}
                   component="span"
                 >
-                  {user.id === 'Гость' ? 'Гость' : user.name}
+                  {user.id === 'Гость' ? 'Гость' : `IP: ${user.address}`}
                 </Typography>
                 {user.id !== 'Гость' && (
                   <Typography
@@ -98,8 +125,12 @@ export default function Navbar() {
                 )}
               </Box>
 
-              {user.id === 'Гость' ? (<Avatar />) : (
-                <Avatar>
+              {user.id === 'Гость' ? (<Avatar sx={{ backgroundColor: 'rgb(57 171 231 / 40%)' }} />) : (
+                <Avatar
+                  sx={{
+                    backgroundColor: 'rgb(57 171 231 / 40%)',
+                  }}
+                >
                   {user.id[0]}
                 </Avatar>
               )}

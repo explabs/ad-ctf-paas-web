@@ -27,11 +27,7 @@ export const { registerSuccess, registerError } = registerSlice.actions;
 
 export const submitRegister = ({ name, password, ssh_pub_key }) => async (dispatch) => jwtService
   .createUser(name, password, ssh_pub_key)
-  .then(async () => {
-    await router.push('/login');
-
-    return dispatch(registerSuccess());
-  })
+  .then(async () => dispatch(registerSuccess()))
   .catch((errors) => dispatch(registerError(errors)));
 
 export default registerSlice.reducer;

@@ -23,8 +23,8 @@ export const { setUser, userLoggedOut } = userSlice.actions;
 
 export const setUserData = (user, redirectUrl) => async (dispatch) => {
   dispatch(setUser(user));
-
   await router.push(redirectUrl || '/');
+  // await router.push(redirectUrl || '/');
 };
 
 export const logoutUser = () => async (dispatch, getState) => {
@@ -34,7 +34,7 @@ export const logoutUser = () => async (dispatch, getState) => {
     return null;
   }
 
-  await router.push('/');
+  // await router.push('/');
 
   jwtService.logout();
 

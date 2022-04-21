@@ -18,6 +18,7 @@ import {
 import Background from 'components/Background';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCookie } from 'cookies-next';
+import { useRouter } from 'next/router';
 import _ from '../src/@lodash';
 import { submitLogin } from '../src/features/auth/store/loginSlice';
 
@@ -43,6 +44,7 @@ function LoginPage() {
       }),
     ),
   });
+  const router = useRouter();
 
   const { isValid, dirtyFields, errors } = formState;
 
@@ -60,11 +62,17 @@ function LoginPage() {
   }
 
   useEffect(() => {
-    const username = getCookie('login');
+    const username = localStorage.getItem('login');
     if (username) {
       setValue('username', username);
     }
   }, []);
+
+  useEffect(() => {
+    if (router.query.login) {
+      setValue('username', router.query.login);
+    }
+  }, [router.query.login]);
 
   return (
     <Layout>

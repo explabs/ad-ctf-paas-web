@@ -12,7 +12,7 @@ import '../styles/styles.css';
 
 const { publicRuntimeConfig } = getConfig();
 
-axios.defaults.baseURL = publicRuntimeConfig.apiUrl;
+axios.defaults.baseURL = 'http://api.potee.local/';
 
 function App({ Component, pageProps }) {
   return (

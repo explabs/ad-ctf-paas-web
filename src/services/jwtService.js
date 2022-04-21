@@ -1,5 +1,6 @@
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
+import router from 'next/router';
 import Utils from '../Utils';
 
 const jwtKey = 'jwt';
@@ -54,7 +55,10 @@ class JwtService extends Utils.EventEmitter {
         password,
         ssh_pub_key: ssh,
       })
-      .then((response) => {
+      .then(async (response) => {
+        localStorage.setItem('login', response.data.login);
+        await router.push(`/login?login=${response.data.login}`);
+
         resolve(response.data.message);
       });
   });

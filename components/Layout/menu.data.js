@@ -20,10 +20,18 @@ const data = {
   authRoutes: [
     {
       id: 1,
-      href: '/my',
+      href: '/scoreboard',
       content: {
-        icon: 'account_circle',
-        caption: 'Команда',
+        icon: 'scoreboard_outlined',
+        caption: 'Рейтинг',
+      },
+    },
+    {
+      id: 2,
+      href: '/download-config',
+      content: {
+        icon: 'upload_file',
+        caption: 'Конфиг',
       },
     },
   ],

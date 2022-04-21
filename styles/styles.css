@@ -158,11 +158,12 @@ h2 small {
 }
 
 .service-card {
-    height: 78px;
-    width: 140px;
+    height: 94px;
+    width: 180px;
     user-select: none;
     /* cursor: pointer; */
   display: flex;
+    gap: 20px;
     padding: 15px 20px;
     border-radius: 20px;
     transition: box-shadow 250ms;

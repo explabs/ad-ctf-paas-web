@@ -1,4 +1,4 @@
-import { Avatar } from '@mui/material';
+import { Avatar, Box, Icon } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import Typography from '@mui/material/Typography';
 
@@ -31,44 +31,75 @@ function renderPosition(position) {
 
 const Service = ({ service }) => {
   let hpColor = '#00FF19';
-  if (service.health < 75) {
+  if (service.hp < 75) {
     hpColor = '#F8FD00';
   }
-  if (service.health < 50) {
+  if (service.hp < 50) {
     hpColor = '#F98803';
   }
-  if (service.health < 25) {
+  if (service.hp < 25) {
     hpColor = '#F40A0A';
   }
 
   let attacksColor;
-  if (service.attacks > 5) {
+  if (service.lost > 5) {
     attacksColor = '#FF0935';
-  } else if (service.attacks > 2) {
+  } else if (service.lost > 2) {
     attacksColor = '#FF8E1D';
-  } else if (service.attacks > 0) {
+  } else if (service.lost > 0) {
     attacksColor = '#FFB023';
   } else {
     attacksColor = '#D4D4DC';
   }
 
+  let slaColor;
+  if (service.sla < 30) {
+    slaColor = '#FF0935';
+  } else if (service.sla < 60) {
+    slaColor = '#FF8E1D';
+  } else {
+    slaColor = '#00FF19';
+  }
+
   return (
     <div
-      className={['service-card', `${service.sla > 0 ? 'up' : 'down'}`].join(' ')}
+      className={['service-card', `${service.state >= 0 ? 'up' : 'down'}`].join(' ')}
     >
       <div>
-        <Typography sx={{ color: attacksColor, whiteSpace: 'nowrap' }}>
-          {service.attacks}
-          {' '}
-          Loss
-        </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            gap: '10px',
+          }}
+        >
+          <Typography sx={{ color: attacksColor, whiteSpace: 'nowrap' }}>
+            {service.lost}
+            {' '}
+            <Icon>
+              phishing
+            </Icon>
+          </Typography>
+          <Typography sx={{ color: attacksColor, whiteSpace: 'nowrap' }}>
+            {service.gained}
+            {' '}
+            <Icon>
+              security
+            </Icon>
+          </Typography>
+        </Box>
         <Typography sx={{ color: hpColor, whiteSpace: 'nowrap' }}>
-          {service.health}
+          {service.hp}
           /100 HP
+        </Typography>
+        <Typography sx={{ color: slaColor, whiteSpace: 'nowrap' }}>
+          {service.sla}
+          {' '}
+          sla
         </Typography>
       </div>
       <div>
-        {service.sla >= 0
+        {service.state >= 0
           ? (
             <svg width="15" height="12" viewBox="0 0 15 12" >
               <path d="M6.88244 0.345601C6.95125 0.239016 7.04332 0.151867 7.15072 0.0916624C7.25813 0.0314569 7.37765 0 7.49898 0C7.62032 0 7.73984 0.0314569 7.84724 0.0916624C7.95465 0.151867 8.04672 0.239016 8.11553 0.345601L14.8661 10.7449C14.9442 10.8648 14.99 11.0053 14.9985 11.1511C15.0071 11.2969 14.978 11.4423 14.9144 11.5717C14.8509 11.7011 14.7553 11.8094 14.6381 11.8849C14.5208 11.9604 14.3865 12.0002 14.2495 12H0.748455C0.611827 11.9994 0.477937 11.9591 0.361185 11.8834C0.244433 11.8077 0.149235 11.6995 0.0858294 11.5704C0.0224239 11.4414 -0.0067904 11.2963 0.0013282 11.1508C0.00944681 11.0054 0.0545911 10.865 0.131906 10.7449L6.88244 0.345601Z" fill="#00FF19"/>
@@ -82,7 +113,7 @@ const Service = ({ service }) => {
     </div>
   );
 };
-const ServiceHeader = ({ i }) => (
+const ServiceHeader = ({ children }) => (
   <div role="button" className="service-card">
     <Typography
       sx={{
@@ -93,66 +124,12 @@ const ServiceHeader = ({ i }) => (
         justifyContent: 'center',
       }}
     >
-      {`service ${i}`}
+      {children}
     </Typography>
   </div>
 );
 
-function newServ(attacks, sla, health) {
-  return {
-    attacks, sla, health,
-  };
-}
-
-const data = [
-  {
-    position: 1,
-    evolution: 3,
-    score: 2352,
-    team: 'liveoverflow',
-    services: [
-      newServ(2, 1, 78), newServ(0, 1, 90), newServ(0, 1, 90), newServ(0, 1, 90),
-    ],
-  },
-  {
-    position: 2,
-    evolution: -2,
-    score: 2014,
-    team: 'R2D2',
-    services: [
-      newServ(3, 0, 74), newServ(1, -1, 90), newServ(0, 1, 90), newServ(0, 1, 90),
-    ],
-  },
-  {
-    position: 3,
-    evolution: 1,
-    score: 1954,
-    team: 'anonymous',
-    services: [
-      newServ(5, 1, 48), newServ(1, 1, 90), newServ(0, 1, 90), newServ(0, 1, 90),
-    ],
-  },
-  {
-    position: 4,
-    evolution: -5,
-    score: 1803,
-    team: 'ashawe',
-    services: [
-      newServ(5, -1, 48), newServ(4, -1, 54), newServ(0, 1, 90), newServ(0, 1, 90),
-    ],
-  },
-  {
-    position: 5,
-    evolution: -7,
-    score: 1567,
-    team: 'team',
-    services: [
-      newServ(3, 0, 32), newServ(4, -1, 54), newServ(0, 1, 50), newServ(0, 1, 90),
-    ],
-  },
-];
-
-export const Scoreboard = () => {
+export const Scoreboard = ({ teams }) => {
   const ref = useRef(null);
 
   const [left, setLeft] = useState(0);
@@ -184,6 +161,19 @@ export const Scoreboard = () => {
     setLeft(newValue);
   };
 
+  if (!teams) {
+    return (
+      <div className="container">
+        <h2>
+          Scoreboard
+        </h2>
+        <div style={{ textAlign: 'center' }}>
+          ¯\_(ツ)_/¯
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="container">
@@ -200,36 +190,38 @@ export const Scoreboard = () => {
                 className="services-line"
                 style={{ transform: `translateX(${left}px)` }}
               >
-                {data[0].services.map((_, i) => (
-                  <ServiceHeader i={i} />
+                {Object.keys(teams[0].services).map((e) => (
+                  <ServiceHeader>
+                    {e}
+                  </ServiceHeader>
                 ))}
               </div>
             </div>
             <div className="col col-4">Счет</div>
           </li>
 
-          {data.map((row) => {
+          {teams.map((row) => {
             let color = '#D4D4DC';
-            if (row.position === 1) {
+            if (row.place === 1) {
               color = '#FFD12B';
             }
-            if (row.position === 2) {
+            if (row.place === 2) {
               color = '#C0C0C0';
             }
-            if (row.position === 3) {
+            if (row.place === 3) {
               color = '#CD7F32';
             }
 
             return (
-              <li key={row.team} className="table-row" style={{ color }}>
+              <li key={row.name} className="table-row" style={{ color }}>
                 <div className="col col-1" data-label="Position">
-                  {renderPosition(row.position)}
+                  {renderPosition(row.place)}
                 </div>
                 <div className="col col-2" data-label="Team">
-                  <span>{row.team}</span>
-                  {row.evolution !== 0 && (
+                  <span>{row.name}</span>
+                  {row.changed_place !== 0 && (
                     <span className="evolution">
-                      {row.evolution > 0
+                      {row.changed_place > 0
                         ? (
                           <svg width="15" height="12" viewBox="0 0 15 12" >
                             <path d="M6.88244 0.345601C6.95125 0.239016 7.04332 0.151867 7.15072 0.0916624C7.25813 0.0314569 7.37765 0 7.49898 0C7.62032 0 7.73984 0.0314569 7.84724 0.0916624C7.95465 0.151867 8.04672 0.239016 8.11553 0.345601L14.8661 10.7449C14.9442 10.8648 14.99 11.0053 14.9985 11.1511C15.0071 11.2969 14.978 11.4423 14.9144 11.5717C14.8509 11.7011 14.7553 11.8094 14.6381 11.8849C14.5208 11.9604 14.3865 12.0002 14.2495 12H0.748455C0.611827 11.9994 0.477937 11.9591 0.361185 11.8834C0.244433 11.8077 0.149235 11.6995 0.0858294 11.5704C0.0224239 11.4414 -0.0067904 11.2963 0.0013282 11.1508C0.00944681 11.0054 0.0545911 10.865 0.131906 10.7449L6.88244 0.345601Z" fill="#00FF19"/>
@@ -239,7 +231,7 @@ export const Scoreboard = () => {
                             <path d="M8.11695 11.6544C8.04814 11.761 7.95607 11.8481 7.84867 11.9083C7.74126 11.9685 7.62174 12 7.50041 12C7.37907 12 7.25955 11.9685 7.15215 11.9083C7.04474 11.8481 6.95267 11.761 6.88386 11.6544L0.133329 1.25511C0.0551918 1.13517 0.00937088 0.994677 0.000843492 0.848906C-0.0076839 0.703136 0.0214088 0.55766 0.0849613 0.428286C0.148514 0.298911 0.244095 0.190586 0.361321 0.115079C0.478546 0.0395717 0.612932 -0.000229059 0.749878 9.91654e-07L14.2509 9.91654e-07C14.3876 0.000602878 14.5215 0.0409155 14.6382 0.116603C14.755 0.192291 14.8502 0.300491 14.9136 0.429566C14.977 0.558641 15.0062 0.703709 14.9981 0.849167C14.9899 0.994626 14.9448 1.13497 14.8675 1.25511L8.11695 11.6544Z" fill="#FF0935"/>
                           </svg>
                         )}
-                      {`${row.evolution > 0 ? '+' : ''}${row.evolution}`}
+                      {`${row.changed_place > 0 ? '+' : ''}${Math.abs(row.changed_place)}`}
                     </span>
                   )}
                 </div>
@@ -255,7 +247,7 @@ export const Scoreboard = () => {
                     style={{ transform: `translateX(${left}px)` }}
                     ref={ref}
                   >
-                    {row.services.map((e, i) => (
+                    {Object.values(row.services).map((e, i) => (
                       <Service key={i} service={e} i={i} />
                     ))}
                   </div>

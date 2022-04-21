@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import {
   Box,
-  Container, Link, Typography,
 } from '@mui/material';
 import Navbar from './Navbar';
 

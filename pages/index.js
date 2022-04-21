@@ -26,12 +26,12 @@ const DownloadButton = styled(Button)(() => ({
 }));
 
 const CodeBlock = styled(Typography)(() => ({
-  'font-family': 'monospace',
+  fontFamily: 'monospace',
   background: '#333333',
   display: 'inline-block',
-  'align-items': 'center',
+  alignItems: 'center',
   padding: '5px 15px',
-  'border-radius': '10px',
+  borderRadius: '10px',
   marginTop: '10px',
   boxShadow: ' 0px 0px 15px 0px rgb(39 36 37)',
 }));
