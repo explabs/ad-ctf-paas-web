@@ -5,30 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9820adaa-72bb-4577-a862-a7688ab41161" name="Default Changelist" comment="add 2 pages">
-      <change afterPath="$PROJECT_DIR$/pages/download-config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/landing2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/landing3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/hacker.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Background.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Background.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/menu.data.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/menu.data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/flag.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/generate.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/scoreboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/scoreboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/store/loginSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/store/loginSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/store/registerSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/store/registerSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/store/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/store/userSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/scoreboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/scoreboard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/jwtService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/jwtService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,6 +213,9 @@
       <workItem from="1648137075155" duration="1390000" />
       <workItem from="1649341850952" duration="4956000" />
       <workItem from="1649356183867" duration="5341000" />
+      <workItem from="1650564194503" duration="4571000" />
+      <workItem from="1650702435062" duration="3151000" />
+      <workItem from="1650719712795" duration="5021000" />
     </task>
     <task id="LOCAL-00001" summary="add 2 pages">
       <created>1631354591692</created>

@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  landing:
+    build:
+      context: "./"
+      dockerfile: Dockerfile
+    environment:
+      SERVER_IP: "http://api.potee.local/"
+    volumes:
+      - "./src:/app/src"
+    ports:
+      - "3000:3000"

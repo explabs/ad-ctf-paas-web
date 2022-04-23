@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import store from '../src/store';
 import Auth from '../src/features/auth/Auth';
 
-import '../styles/styles.css';
+// import '../styles/styles.scss';
 
 const { publicRuntimeConfig } = getConfig();
 
