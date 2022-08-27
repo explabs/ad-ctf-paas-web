@@ -1,9 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
-import jwtService from '../../../services/jwtService';
-import { setUserData } from './userSlice';
+import { createSlice } from "@reduxjs/toolkit";
+import jwtService from "../../../services/jwtService";
+import { setUserData } from "./userSlice";
 
 const loginSlice = createSlice({
-  name: 'auth/login',
+  name: "auth/login",
   initialState: {
     success: false,
     errors: [],
@@ -23,13 +23,16 @@ const loginSlice = createSlice({
 
 export const { loginSuccess, loginError } = loginSlice.actions;
 
-export const submitLogin = ({ username, password }) => async (dispatch) => jwtService
-  .signInWithUsernameAndPassword(username, password)
-  .then((token) => {
-    dispatch(setUserData(token, '/'));
+export const submitLogin =
+  ({ username, password }) =>
+  async (dispatch) =>
+    jwtService
+      .signInWithUsernameAndPassword(username, password)
+      .then((token) => {
+        dispatch(setUserData(token, "/"));
 
-    return dispatch(loginSuccess());
-  })
-  .catch((errors) => dispatch(loginError(errors || [])));
+        return dispatch(loginSuccess());
+      })
+      .catch((errors) => dispatch(loginError(errors || [])));
 
 export default loginSlice.reducer;
