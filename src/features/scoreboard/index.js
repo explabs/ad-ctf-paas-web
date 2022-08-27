@@ -101,9 +101,10 @@ const Service = ({ service }) => {
 
   return (
     <div
-      className={["service-card", `${service.state >= 0 ? "up" : "down"}`].join(
-        " "
-      )}
+      className={[
+        "service-card",
+        `${service.status >= 0 ? "up" : "down"}`,
+      ].join(" ")}
     >
       <div>
         <Box
@@ -121,15 +122,15 @@ const Service = ({ service }) => {
           </Typography>
         </Box>
         <Typography sx={{ color: hpColor, whiteSpace: "nowrap" }}>
-          {service.hp}
-          /100 HP
+          {service.reputation}
+          /100 reputation
         </Typography>
         <Typography sx={{ color: slaColor, whiteSpace: "nowrap" }}>
           {service.sla} sla
         </Typography>
       </div>
       <div>
-        {service.state >= 0 ? (
+        {service.status >= 0 ? (
           <svg width="15" height="12" viewBox="0 0 15 12">
             <path
               d="M6.88244 0.345601C6.95125 0.239016 7.04332 0.151867 7.15072 0.0916624C7.25813 0.0314569 7.37765 0 7.49898 0C7.62032 0 7.73984 0.0314569 7.84724 0.0916624C7.95465 0.151867 8.04672 0.239016 8.11553 0.345601L14.8661 10.7449C14.9442 10.8648 14.99 11.0053 14.9985 11.1511C15.0071 11.2969 14.978 11.4423 14.9144 11.5717C14.8509 11.7011 14.7553 11.8094 14.6381 11.8849C14.5208 11.9604 14.3865 12.0002 14.2495 12H0.748455C0.611827 11.9994 0.477937 11.9591 0.361185 11.8834C0.244433 11.8077 0.149235 11.6995 0.0858294 11.5704C0.0224239 11.4414 -0.0067904 11.2963 0.0013282 11.1508C0.00944681 11.0054 0.0545911 10.865 0.131906 10.7449L6.88244 0.345601Z"
@@ -239,12 +240,12 @@ export const Scoreboard = ({ teams }) => {
             }
 
             return (
-              <li key={row.name} className="table-row" style={{ color }}>
+              <li key={row.id} className="table-row" style={{ color }}>
                 <div className="col col-1" data-label="Position">
                   {renderPosition(row.place)}
                 </div>
                 <div className="col col-2" data-label="Team">
-                  <span>{row.name}</span>
+                  <span>{row.id}</span>
                   {row.changed_place !== 0 && (
                     <span className="evolution">
                       {row.changed_place > 0 ? (
@@ -286,7 +287,7 @@ export const Scoreboard = ({ teams }) => {
                   </div>
                 </div>
                 <div className="col col-4" data-label="Score">
-                  {row.score}
+                  {row.total_score}
                 </div>
               </li>
             );
