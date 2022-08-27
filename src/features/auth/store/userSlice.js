@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import jwtService from '../../../services/jwtService';
 
 const initialState = {
-  id: 'Гость',
+  user_id: "Гость",
   name: '',
   mode: '',
   address: '',
@@ -30,7 +30,7 @@ export const setUserData = (user, redirectUrl) => async (dispatch) => {
 export const logoutUser = () => async (dispatch, getState) => {
   const { user } = getState().auth;
 
-  if (user.id === 'Гость') {
+  if (user.user_id === "Гость") {
     return null;
   }
 

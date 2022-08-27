@@ -108,9 +108,9 @@ export default function Navbar() {
                   }}
                   component="span"
                 >
-                  {user.id === 'Гость' ? 'Гость' : `IP: ${user.address}`}
+                  {user.user_id === "Гость" ? "Гость" : `IP: ${user.address}`}
                 </Typography>
-                {user.id !== 'Гость' && (
+                {user.user_id !== "Гость" && (
                   <Typography
                     color="textSecondary"
                     sx={{
@@ -120,18 +120,20 @@ export default function Navbar() {
                       fontSize: '11px',
                     }}
                   >
-                    {user.id}
+                    {user.user_id}
                   </Typography>
                 )}
               </Box>
 
-              {user.id === 'Гость' ? (<Avatar sx={{ backgroundColor: 'rgb(57 171 231 / 40%)' }} />) : (
+              {user.user_id === "Гость" ? (
+                <Avatar sx={{ backgroundColor: "rgb(57 171 231 / 40%)" }} />
+              ) : (
                 <Avatar
                   sx={{
                     backgroundColor: 'rgb(57 171 231 / 40%)',
                   }}
                 >
-                  {user.id[0]}
+                  {user.user_id[0]}
                 </Avatar>
               )}
             </Button>
@@ -152,7 +154,7 @@ export default function Navbar() {
                 py: '2rem',
               }}
             >
-              {user.id === 'Гость' ? (
+              {user.user_id === "Гость" ? (
                 <>
                   {data.publicRoutes.map((route) => (
                     <MenuItemButton

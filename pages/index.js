@@ -10,7 +10,7 @@ export default function HomePage() {
   const router = useRouter();
   const ref = useRef(null);
   useEffect(() => {
-    if (user.id === 'Гость') {
+    if (user.user_id === "Гость") {
       router.push('/login');
     } else {
       router.push('/scoreboard');
