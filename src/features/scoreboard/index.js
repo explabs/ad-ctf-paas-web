@@ -190,10 +190,8 @@ export const Scoreboard = ({ teams }) => {
                 className="services-line"
                 style={{ transform: `translateX(${left}px)` }}
               >
-                {Object.keys(teams[0].services).map((e) => (
-                  <ServiceHeader>
-                    {e}
-                  </ServiceHeader>
+                {Object.keys(teams[0].srv).map((e) => (
+                  <ServiceHeader>{e}</ServiceHeader>
                 ))}
               </div>
             </div>
@@ -247,7 +245,7 @@ export const Scoreboard = ({ teams }) => {
                     style={{ transform: `translateX(${left}px)` }}
                     ref={ref}
                   >
-                    {Object.values(row.services).map((e, i) => (
+                    {Object.values(row.srv).map((e, i) => (
                       <Service key={i} service={e} i={i} />
                     ))}
                   </div>

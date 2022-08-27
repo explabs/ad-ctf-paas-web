@@ -70,9 +70,9 @@ class JwtService extends Utils.EventEmitter {
         password,
       })
       .then((response) => {
-        if (response.data.token) {
-          this.setSession(response.data.token);
-          resolve(jwtDecode(response.data.token));
+          if (response.data.access_token) {
+            this.setSession(response.data.access_token);
+            resolve(jwtDecode(response.data.access_token));
         } else {
           reject(response.data.error);
         }
