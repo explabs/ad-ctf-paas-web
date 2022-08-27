@@ -1,29 +1,45 @@
-import { useState } from 'react';
+import { useState } from "react";
 import {
-  AppBar, Avatar, Box, Button, Container, Icon, ListItemIcon, ListItemText, MenuItem, Popover, Toolbar, Typography,
-} from '@mui/material';
-import { useDispatch, useSelector } from 'react-redux';
-import styled from '@emotion/styled';
-import Link from 'next/link';
-import MenuItemButton from './MenuItemButton';
+  AppBar,
+  Avatar,
+  Box,
+  Button,
+  Container,
+  Icon,
+  ListItemIcon,
+  ListItemText,
+  MenuItem,
+  Popover,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import styled from "@emotion/styled";
+import Link from "next/link";
+import MenuItemButton from "./MenuItemButton";
 
-import data from './menu.data';
-import { logoutUser } from '../../src/features/auth/store/userSlice';
+import data from "./menu.data";
+import { logoutUser } from "../../src/features/auth/store/userSlice";
 
 const Logo = styled(Typography)`
   color: rgb(57 171 231 / 75%) !important;
-  letter-spacing: .045em;
+  letter-spacing: 0.045em;
   font-family: monospace;
   border-right: 1.5px solid rgb(57 171 231 / 75%);
   line-height: 21px;
-  
+
   text-decoration: none !important;
-  
+
   animation: blink-caret 1.5s step-end infinite;
-  
+
   @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: rgb(57 171 231 / 75%); }
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: rgb(57 171 231 / 75%);
+    }
   }
 `;
 
@@ -50,12 +66,12 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         sx={{
-          minHeight: '72px',
-          display: 'flex',
-          justifyContent: 'center',
-          boxShadow: 'none',
-          backdropFilter: 'blur(6px)',
-          WebkitBackdropFilter: 'blur(6px)',
+          minHeight: "72px",
+          display: "flex",
+          justifyContent: "center",
+          boxShadow: "none",
+          backdropFilter: "blur(6px)",
+          WebkitBackdropFilter: "blur(6px)",
         }}
       >
         <Container maxWidth="xl">
@@ -66,10 +82,10 @@ export default function Navbar() {
                 noWrap
                 component="div"
                 sx={{
-                  '&:hover': {
-                    color: 'rgb(57 171 231 / 100%)',
+                  "&:hover": {
+                    color: "rgb(57 171 231 / 100%)",
                   },
-                  display: { xs: 'none', sm: 'block' },
+                  display: { xs: "none", sm: "block" },
                 }}
               >
                 ctf_
@@ -79,32 +95,32 @@ export default function Navbar() {
             <Box sx={{ flexGrow: 1 }} />
             <Button
               sx={{
-                minHeight: '52px',
-                minWidth: '52px',
+                minHeight: "52px",
+                minWidth: "52px",
                 m: 0,
-                ml: '0.6rem',
+                ml: "0.6rem",
                 py: 0,
-                pr: '0.6rem',
+                pr: "0.6rem",
                 pl: 0,
-                borderRadius: '1rem',
+                borderRadius: "1rem",
               }}
               color="primary"
               onClick={userMenuClick}
             >
               <Box
                 sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  mx: '1rem',
-                  alignItems: 'flex-end',
+                  display: "flex",
+                  flexDirection: "column",
+                  mx: "1rem",
+                  alignItems: "flex-end",
                 }}
               >
                 <Typography
                   sx={{
-                    display: 'flex',
-                    fontSize: '14px',
+                    display: "flex",
+                    fontSize: "14px",
                     fontWeight: 600,
-                    color: 'rgb(57 171 231 / 75%)',
+                    color: "rgb(57 171 231 / 75%)",
                   }}
                   component="span"
                 >
@@ -114,10 +130,10 @@ export default function Navbar() {
                   <Typography
                     color="textSecondary"
                     sx={{
-                      textTransform: 'capitalize',
+                      textTransform: "capitalize",
                       fontWeight: 500,
                       lineHeight: 1,
-                      fontSize: '11px',
+                      fontSize: "11px",
                     }}
                   >
                     {user.user_id}
@@ -130,7 +146,7 @@ export default function Navbar() {
               ) : (
                 <Avatar
                   sx={{
-                    backgroundColor: 'rgb(57 171 231 / 40%)',
+                    backgroundColor: "rgb(57 171 231 / 40%)",
                   }}
                 >
                   {user.user_id[0]}
@@ -143,15 +159,15 @@ export default function Navbar() {
               anchorEl={userMenu}
               onClose={userMenuClose}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'center',
+                vertical: "bottom",
+                horizontal: "center",
               }}
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'center',
+                vertical: "top",
+                horizontal: "center",
               }}
               sx={{
-                py: '2rem',
+                py: "2rem",
               }}
             >
               {user.user_id === "Гость" ? (
@@ -179,7 +195,7 @@ export default function Navbar() {
                       await logout();
                     }}
                   >
-                    <ListItemIcon sx={{ minWidth: '10rem' }}>
+                    <ListItemIcon sx={{ minWidth: "10rem" }}>
                       <Icon>exit_to_app</Icon>
                     </ListItemIcon>
                     <ListItemText primary="Выйти" />

@@ -1,10 +1,10 @@
-import Layout from 'components/Layout';
-import Background from 'components/Background';
-import { Container } from '@mui/material';
+import Layout from "components/Layout";
+import Background from "components/Background";
+import { Container } from "@mui/material";
 
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { Scoreboard } from '../src/features/scoreboard';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Scoreboard } from "../src/features/scoreboard";
 
 export default function ScorePage() {
   const [data, setData] = useState();
@@ -28,13 +28,15 @@ export default function ScorePage() {
     <Layout>
       <Background />
 
-      <Container sx={{
-        minHeight: 'calc(100vh - 50px)', paddingTop: '48px', pb: '48px',
+      <Container
+        sx={{
+          minHeight: "calc(100vh - 50px)",
+          paddingTop: "48px",
+          pb: "48px",
       }}
       >
         <Scoreboard teams={data} />
       </Container>
-
     </Layout>
   );
 }
