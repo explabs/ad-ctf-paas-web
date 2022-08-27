@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
+import React, { useEffect } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
-import Layout from 'components/Layout';
+import Layout from "components/Layout";
 import {
   Grid,
   FormGroup,
@@ -14,34 +14,28 @@ import {
   Card,
   CardContent,
   Typography,
-} from '@mui/material';
-import Background from 'components/Background';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCookie } from 'cookies-next';
-import { useRouter } from 'next/router';
-import _ from '../src/@lodash';
-import { submitLogin } from '../src/features/auth/store/loginSlice';
+} from "@mui/material";
+import Background from "components/Background";
+import { useDispatch, useSelector } from "react-redux";
+import { getCookie } from "cookies-next";
+import { useRouter } from "next/router";
+import _ from "../src/@lodash";
+import { submitLogin } from "../src/features/auth/store/loginSlice";
 
 function LoginPage() {
   const dispatch = useDispatch();
   const login = useSelector(({ auth }) => auth.login);
-  const {
-    control, setError, formState, handleSubmit, setValue,
-  } = useForm({
-    mode: 'onChange',
+  const { control, setError, formState, handleSubmit, setValue } = useForm({
+    mode: "onChange",
     defaultValues: {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
     },
     resolver: yupResolver(
       yup.object().shape({
-        username: yup
-          .string()
-          .required('Это поле обязательно для заполнения.'),
-        password: yup
-          .string()
-          .required('Это поле обязательно для заполнения.'),
-      }),
+        username: yup.string().required("Это поле обязательно для заполнения."),
+        password: yup.string().required("Это поле обязательно для заполнения."),
+      })
     ),
   });
   const router = useRouter();
@@ -51,7 +45,7 @@ function LoginPage() {
   useEffect(() => {
     login.errors.forEach((error) => {
       setError(error.type, {
-        type: 'manual',
+        type: "manual",
         message: error.message,
       });
     });
@@ -62,15 +56,15 @@ function LoginPage() {
   }
 
   useEffect(() => {
-    const username = localStorage.getItem('login');
+    const username = localStorage.getItem("login");
     if (username) {
-      setValue('username', username);
+      setValue("username", username);
     }
   }, []);
 
   useEffect(() => {
     if (router.query.login) {
-      setValue('username', router.query.login);
+      setValue("username", router.query.login);
     }
   }, [router.query.login]);
 
@@ -79,10 +73,17 @@ function LoginPage() {
       <Background />
 
       <Container>
-        <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Grid
+          container
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Grid item md={4}>
             <Card raised>
-              <CardContent sx={{ p: '24px', pb: '8px' }}>
+              <CardContent sx={{ p: "24px", pb: "8px" }}>
                 <Typography variant="h4" sx={{ mb: 1 }}>
                   Авторизация
                 </Typography>
@@ -98,7 +99,7 @@ function LoginPage() {
                           type="text"
                           placeholder="mirea team"
                           error={!!errors.username}
-                          helperText={errors?.username?.message}
+                          helpertext={errors?.username?.message}
                           variant="outlined"
                           required
                           fullWidth
@@ -117,7 +118,7 @@ function LoginPage() {
                           type="password"
                           placeholder="●●●●●●"
                           error={!!errors.password}
-                          helperText={errors?.password?.message}
+                          helpertext={errors?.password?.message}
                           variant="outlined"
                           required
                           fullWidth
@@ -127,8 +128,8 @@ function LoginPage() {
                   </FormGroup>
                   <Button
                     sx={{
-                      mb: '-12px',
-                      ml: '-8px',
+                      mb: "-12px",
+                      ml: "-8px",
                     }}
                     type="submit"
                     disabled={_.isEmpty(dirtyFields) || !isValid}

@@ -1,14 +1,14 @@
-import axios from 'axios';
-import jwtDecode from 'jwt-decode';
-import router from 'next/router';
-import Utils from '../Utils';
+import axios from "axios";
+import jwtDecode from "jwt-decode";
+import router from "next/router";
+import Utils from "../Utils";
 
-const jwtKey = 'jwt';
+const jwtKey = "jwt";
 
 export const emits = Object.freeze({
-  onAutoLogin: 'onAutoLogin',
-  onAutoLogout: 'onAutoLogout',
-  onNoAccessToken: 'onNoAccessToken',
+  onAutoLogin: "onAutoLogin",
+  onAutoLogout: "onAutoLogout",
+  onNoAccessToken: "onNoAccessToken",
 });
 
 class JwtService extends Utils.EventEmitter {
@@ -20,14 +20,19 @@ class JwtService extends Utils.EventEmitter {
   setInterceptors = () => {
     axios.interceptors.response.use(
       (response) => response,
-      (err) => new Promise(() => {
-        // eslint-disable-next-line no-underscore-dangle
-        if (err.status === 401 && err.config && !err.config.__isRetryRequest) {
-          this.emit(emits.onAutoLogout, 'Invalid access_token');
-          this.logout();
-        }
-        throw err;
-      }),
+      (err) =>
+        new Promise(() => {
+          // eslint-disable-next-line no-underscore-dangle
+          if (
+            err.status === 401 &&
+            err.config &&
+            !err.config.__isRetryRequest
+          ) {
+            this.emit(emits.onAutoLogout, "Invalid access_token");
+            this.logout();
+          }
+          throw err;
+        })
     );
   };
 
@@ -44,51 +49,54 @@ class JwtService extends Utils.EventEmitter {
       this.emit(emits.onAutoLogin, true);
     } else {
       this.setSession(null);
-      this.emit(emits.onAutoLogout, 'access_token expired');
+      this.emit(emits.onAutoLogout, "access_token expired");
     }
   };
 
-  createUser = (name, password, ssh) => new Promise((resolve) => {
-    axios
-      .post('/api/v1/team', {
-        name,
-        password,
-        ssh_pub_key: ssh,
-      })
-      .then(async (response) => {
-        localStorage.setItem('login', response.data.login);
-        await router.push(`/login?login=${response.data.login}`);
+  createUser = (name, password, ssh) =>
+    new Promise((resolve) => {
+      axios
+        .post("/api/v1/team", {
+          name,
+          password,
+          ssh_pub_key: ssh,
+        })
+        .then(async (response) => {
+          localStorage.setItem("login", response.data.login);
+          await router.push(`/login?login=${response.data.login}`);
 
-        resolve(response.data.message);
-      });
-  });
+          resolve(response.data.message);
+        });
+    });
 
-  signInWithUsernameAndPassword = (username, password) => new Promise((resolve, reject) => {
-    axios
-      .post('/api/v1/auth/login', {
-        username,
-        password,
-      })
-      .then((response) => {
+  signInWithUsernameAndPassword = (username, password) =>
+    new Promise((resolve, reject) => {
+      axios
+        .post("/api/v1/auth/login", {
+          username,
+          password,
+        })
+        .then((response) => {
           if (response.data.access_token) {
             this.setSession(response.data.access_token);
             resolve(jwtDecode(response.data.access_token));
-        } else {
-          reject(response.data.error);
-        }
-      });
-  });
+          } else {
+            reject(response.data.error);
+          }
+        });
+    });
 
-  signInWithToken = () => new Promise((resolve, reject) => {
-    const token = this.getAccessToken();
-    if (this.isAuthTokenValid(token)) {
-      this.setSession(token);
-      resolve(jwtDecode(token));
-    } else {
-      this.logout();
-      reject(new Error('Failed to login with token.'));
-    }
-  })
+  signInWithToken = () =>
+    new Promise((resolve, reject) => {
+      const token = this.getAccessToken();
+      if (this.isAuthTokenValid(token)) {
+        this.setSession(token);
+        resolve(jwtDecode(token));
+      } else {
+        this.logout();
+        reject(new Error("Failed to login with token."));
+      }
+    });
 
   setSession = (accessToken) => {
     if (accessToken) {
@@ -104,7 +112,8 @@ class JwtService extends Utils.EventEmitter {
     this.setSession(null);
   };
 
-  isAuthTokenValid = (token) => token && jwtDecode(token).exp >= Date.now() / 1000;
+  isAuthTokenValid = (token) =>
+    token && jwtDecode(token).exp >= Date.now() / 1000;
 
   getAccessToken = () => window.localStorage.getItem(jwtKey);
 }
